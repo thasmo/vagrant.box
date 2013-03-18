@@ -1,0 +1,14 @@
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.komodotools
+*.komodoproject
+
+# Project specific
+/*
+!.gitignore
+!/.chef
+!/host
+!Vagrantfile

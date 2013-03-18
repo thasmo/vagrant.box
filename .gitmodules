@@ -1,0 +1,36 @@
+[submodule ".chef/cookbook/sqlite"]
+	path = .chef/cookbook/sqlite
+	url = git@github.com:opscode-cookbooks/sqlite.git
+[submodule ".chef/cookbook/apt"]
+	path = .chef/cookbook/apt
+	url = git@github.com:opscode-cookbooks/apt.git
+[submodule ".chef/cookbook/cron"]
+	path = .chef/cookbook/cron
+	url = git@github.com:opscode-cookbooks/cron.git
+[submodule ".chef/cookbook/openssl"]
+	path = .chef/cookbook/openssl
+	url = git@github.com:opscode-cookbooks/openssl.git
+[submodule ".chef/cookbook/memcached"]
+	path = .chef/cookbook/memcached
+	url = git@github.com:opscode-cookbooks/memcached.git
+[submodule ".chef/cookbook/imagemagick"]
+	path = .chef/cookbook/imagemagick
+	url = git@github.com:opscode-cookbooks/imagemagick.git
+[submodule ".chef/cookbook/mysql"]
+	path = .chef/cookbook/mysql
+	url = git@github.com:opscode-cookbooks/mysql.git
+[submodule ".chef/cookbook/postfix"]
+	path = .chef/cookbook/postfix
+	url = git@github.com:opscode-cookbooks/postfix.git
+[submodule ".chef/cookbook/apache2"]
+	path = .chef/cookbook/apache2
+	url = git@github.com:opscode-cookbooks/apache2.git
+[submodule ".chef/cookbook/php"]
+	path = .chef/cookbook/php
+	url = git@github.com:opscode-cookbooks/php.git
+[submodule ".chef/cookbook/locale"]
+	path = .chef/cookbook/locale
+	url = git@github.com:hw-cookbooks/locale.git
+[submodule ".chef/cookbook/dotdeb"]
+	path = .chef/cookbook/dotdeb
+	url = git@github.com:homemade/chef-dotdeb.git
