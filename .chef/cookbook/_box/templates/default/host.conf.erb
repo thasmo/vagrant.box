@@ -1,13 +1,16 @@
+# Configuration
+DocumentRoot /vagrant/
+UseCanonicalName Off
+
+# Domains
 <VirtualHost *:80>
 	ServerAlias *.local
-	UseCanonicalName Off
 	VirtualDocumentRoot "/vagrant/host/%-2+/htdocs/"
 	VirtualScriptAlias "/vagrant/host/%-2+/htdocs/"
 </VirtualHost>
 
 <VirtualHost *:443>
 	ServerAlias *.local
-	UseCanonicalName Off
 	VirtualDocumentRoot "/vagrant/host/%-2+/htdocs/"
 	VirtualScriptAlias "/vagrant/host/%-2+/htdocs/"
 
