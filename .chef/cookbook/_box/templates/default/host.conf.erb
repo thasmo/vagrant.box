@@ -10,6 +10,8 @@ SetEnv ENVIRONMENT local
 	ServerAlias *.local
 	VirtualDocumentRoot "/vagrant/host/%-2+/htdocs/"
 	VirtualScriptAlias "/vagrant/host/%-2+/htdocs/"
+
+	php_admin_value auto_prepend_file "/vagrant/.box/document_root.php"
 </VirtualHost>
 
 <VirtualHost *:443>
@@ -20,4 +22,6 @@ SetEnv ENVIRONMENT local
 	SSLEngine On
     SSLCertificateFile "/etc/apache2/ssl/server.crt"
     SSLCertificateKeyFile "/etc/apache2/ssl/server.key"
+
+	php_admin_value auto_prepend_file "/vagrant/.box/document_root.php"
 </VirtualHost>
