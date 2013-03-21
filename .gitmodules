@@ -34,3 +34,6 @@
 [submodule ".chef/cookbook/dotdeb"]
 	path = .chef/cookbook/dotdeb
 	url = git@github.com:homemade/chef-dotdeb.git
+[submodule ".chef/cookbook/build-essential"]
+	path = .chef/cookbook/build-essential
+	url = git@github.com:opscode-cookbooks/build-essential.git
