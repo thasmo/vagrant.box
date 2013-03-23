@@ -42,6 +42,7 @@ Vagrant.configure("2") do |config|
 
 		# Common
 		chef.add_recipe("apt")
+		chef.add_recipe("ubuntu")
 		chef.add_recipe("build-essential")
 		chef.add_recipe("locale")
 		chef.add_recipe("cron")

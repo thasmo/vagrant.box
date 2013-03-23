@@ -37,3 +37,6 @@
 [submodule ".chef/cookbook/build-essential"]
 	path = .chef/cookbook/build-essential
 	url = git@github.com:opscode-cookbooks/build-essential.git
+[submodule ".chef/cookbook/ubuntu"]
+	path = .chef/cookbook/ubuntu
+	url = git@github.com:opscode-cookbooks/ubuntu.git
