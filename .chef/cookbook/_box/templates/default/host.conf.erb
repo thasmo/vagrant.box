@@ -5,6 +5,14 @@ UseCanonicalName Off
 # Environment Variables
 SetEnv ENVIRONMENT local
 
+# PHP Configuration
+<IfModule mod_fastcgi.c>
+	AddHandler php5-fastcgi .php
+	Action php5-fastcgi /php5-fastcgi
+	Alias /php5-fastcgi /usr/lib/cgi-bin/php5-fastcgi
+	FastCgiExternalServer /usr/lib/cgi-bin/php5-fastcgi -socket /var/run/php5-fpm.sock -pass-header Authorization
+</IfModule>
+
 # Subdomains
 <VirtualHost *:80>
 	ServerAlias *.*.*.local

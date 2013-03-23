@@ -32,6 +32,10 @@ Vagrant.configure("2") do |config|
 				"server_root_password" => "",
 				"server_repl_password" => "",
 				"server_debian_password" => "",
+			},
+			"php" => {
+				"packages" => ["php5-fpm", "php5-dev", "php5-cli", "php-pear"],
+				"conf_dir" => "/etc/php5/fpm",
 			}
 		}
 
@@ -57,7 +61,7 @@ Vagrant.configure("2") do |config|
 
 		# Apache
 		chef.add_recipe("apache2")
-		chef.add_recipe("apache2::mod_php5")
+		chef.add_recipe("apache2::mod_fastcgi")
 		chef.add_recipe("apache2::mod_rewrite")
 		chef.add_recipe("apache2::mod_deflate")
 		chef.add_recipe("apache2::mod_expires")
@@ -69,6 +73,7 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("apache2::mod_dir")
 		chef.add_recipe("apache2::mod_ssl")
 		chef.add_recipe("_box::mod_vhost_alias")
+		chef.add_recipe("_box::mod_actions")
 
 		# PHP
 		chef.add_recipe("php")
