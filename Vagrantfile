@@ -36,6 +36,18 @@ Vagrant.configure("2") do |config|
 			"php" => {
 				"packages" => ["php5-fpm", "php5-dev", "php5-cli", "php-pear"],
 				"conf_dir" => "/etc/php5/fpm",
+				"directives" => {
+					"expose_php" => "On",
+					"default_charset" => "utf-8",
+					"display_errors" => "On",
+					"error_reporting" => "E_ALL",
+					"memory_limit" => "256M",
+					"post_max_size" => "128M",
+					"upload_max_filesize" => "128M",
+					"max_file_uploads" => "20",
+					"date.timezone" => "UTC",
+					"phar.readonly" => "Off",
+				}
 			}
 		}
 
