@@ -99,6 +99,9 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("php::module_sqlite3")
 		chef.add_recipe("php::module_mysql")
 
+		# Composer
+		chef.add_recipe("composer")
+
 		# Base
 		chef.add_recipe("_box")
 	end
