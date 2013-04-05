@@ -50,6 +50,7 @@ Vagrant.configure("2") do |config|
 					"max_file_uploads" => "20",
 					"date.timezone" => "UTC",
 					"phar.readonly" => "Off",
+					"mail.add_x_header" => "Off",
 				}
 			}
 		}
