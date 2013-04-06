@@ -71,7 +71,7 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("imagemagick")
 		chef.add_recipe("sqlite")
 		chef.add_recipe("mysql::server")
-		chef.add_recipe("postfix::server")
+		chef.add_recipe("_box::mail")
 		#chef.add_recipe("dotdeb")
 		#chef.add_recipe("dotdeb::php54")
 
