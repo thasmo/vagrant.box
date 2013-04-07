@@ -3,10 +3,6 @@
 
 Vagrant.configure("2") do |config|
 
-	# Box: Ubuntu Quantal Quetzal (12.10)
-	#config.vm.box = "quantal"
-	#config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/quantal/current/quantal-server-cloudimg-amd64-vagrant-disk1.box"
-
 	# Box: Ubuntu Raring Ringtail (13.04)
 	config.vm.box = "raring"
 	config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
