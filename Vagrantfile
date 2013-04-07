@@ -19,6 +19,7 @@ Vagrant.configure("2") do |config|
 	# VM Configuration
 	config.vm.provider :virtualbox do |vb|
 		vb.gui = false
+		vb.name = "Development"
 		vb.customize ["modifyvm", :id, "--memory", "1024"]
 		vb.customize ["modifyvm", :id, "--acpi", "on"]
 		vb.customize ["modifyvm", :id, "--ioapic", "on"]
