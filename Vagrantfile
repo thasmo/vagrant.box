@@ -71,7 +71,6 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("imagemagick")
 		chef.add_recipe("sqlite")
 		chef.add_recipe("mysql::server")
-		chef.add_recipe("_box::mail")
 
 		# Apache
 		chef.add_recipe("apache2")
@@ -86,8 +85,6 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("apache2::mod_auth_basic")
 		chef.add_recipe("apache2::mod_dir")
 		chef.add_recipe("apache2::mod_ssl")
-		chef.add_recipe("_box::mod_vhost_alias")
-		chef.add_recipe("_box::mod_actions")
 
 		# PHP
 		chef.add_recipe("php")
@@ -98,10 +95,11 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("php::module_sqlite3")
 		chef.add_recipe("php::module_mysql")
 
-		# Composer
-		chef.add_recipe("_box::composer")
-
 		# Base
-		chef.add_recipe("_box")
+		chef.add_recipe("_box::mod_vhost_alias")
+		chef.add_recipe("_box::mod_actions")
+		chef.add_recipe("_box::hosts")
+		chef.add_recipe("_box::composer")
+		chef.add_recipe("_box::mail")
 	end
 end
