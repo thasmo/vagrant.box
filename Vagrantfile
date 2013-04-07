@@ -106,7 +106,7 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("php::module_mysql")
 
 		# Composer
-		chef.add_recipe("composer")
+		chef.add_recipe("_box::composer")
 
 		# Base
 		chef.add_recipe("_box")
