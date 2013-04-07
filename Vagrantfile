@@ -62,7 +62,6 @@ Vagrant.configure("2") do |config|
 		chef.roles_path = ".chef/role/"
 
 		# Common
-		#chef.add_recipe("apt")
 		chef.add_recipe("ubuntu")
 		chef.add_recipe("build-essential")
 		chef.add_recipe("locale")
