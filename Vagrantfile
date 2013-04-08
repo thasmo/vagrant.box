@@ -52,6 +52,10 @@ Vagrant.configure("2") do |config|
 					"date.timezone" => "UTC",
 					"phar.readonly" => "Off",
 					"mail.add_x_header" => "Off",
+					"apc.shm_size" => "256M",
+					"apc.max_file_size" => "1M",
+					"apc.num_files_hint" => "10000",
+					"apc.user_entries_hint" => "10000",
 				}
 			}
 		}
