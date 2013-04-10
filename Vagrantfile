@@ -55,10 +55,12 @@ Vagrant.configure("2") do |config|
 					"date.timezone" => "UTC",
 					"phar.readonly" => "Off",
 					"mail.add_x_header" => "Off",
+					"session.serialize_handler" => "igbinary",
 					"apc.shm_size" => "256M",
 					"apc.max_file_size" => "1M",
 					"apc.num_files_hint" => "10000",
 					"apc.user_entries_hint" => "10000",
+					"apc.serializer" => "igbinary",
 				}
 			}
 		}
@@ -103,6 +105,7 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("php::module_mysql")
 
 		# Base
+		chef.add_recipe("_box::module_igbinary")
 		chef.add_recipe("_box::mod_vhost_alias")
 		chef.add_recipe("_box::mod_actions")
 		chef.add_recipe("_box::hosts")
