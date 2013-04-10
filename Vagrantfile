@@ -108,5 +108,6 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("_box::hosts")
 		chef.add_recipe("_box::composer")
 		chef.add_recipe("_box::mail")
+		chef.add_recipe("_box::phing")
 	end
 end
