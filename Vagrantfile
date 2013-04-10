@@ -21,6 +21,8 @@ Vagrant.configure("2") do |config|
 		vb.customize ["modifyvm", :id, "--ioapic", "on"]
 		vb.customize ["modifyvm", :id, "--cpus", "4"]
 		vb.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
+		vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+		vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
 
 	# Chef Solo Provisioning
