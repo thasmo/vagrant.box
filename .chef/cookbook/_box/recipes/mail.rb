@@ -14,7 +14,7 @@ ruby_block "configure-virtual-alias-maps-file" do
     file = Chef::Util::FileEdit.new("/etc/postfix/main.cf")
     file.insert_line_if_no_match(
       "/virtual_alias_maps =/",
-      "virtual_alias_maps = regexp:/etc/postfix/virtual",
+      "virtual_alias_maps = regexp:/etc/postfix/virtual"
     )
     file.write_file
   end
