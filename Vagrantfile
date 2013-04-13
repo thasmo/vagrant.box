@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
 				"server_debian_password" => "",
 			},
 			"php" => {
-				"packages" => ["php5-fpm", "php5-dev", "php5-cli", "php-pear"],
+				"packages" => ["php5-fpm", "php5-dev", "php5-cli", "php-pear", "php5-mcrypt"],
 				"conf_dir" => "/etc/php5/fpm",
 				"directives" => {
 					"expose_php" => "On",
