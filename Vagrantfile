@@ -26,7 +26,10 @@ Vagrant.configure("2") do |config|
 		vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
 
-	# Chef Solo Provisioning
+	# Initialization Provisioning
+	config.vm.provision :shell, :path => ".chef/initialization.sh"
+
+	# Main Provisioning
 	config.vm.provision :chef_solo do |chef|
 
 		# Configuration
@@ -111,5 +114,6 @@ Vagrant.configure("2") do |config|
 		chef.add_recipe("_box::hosts")
 		chef.add_recipe("_box::composer")
 		chef.add_recipe("_box::mail")
+		chef.add_recipe("_box::phing")
 	end
 end
