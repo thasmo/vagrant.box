@@ -26,7 +26,10 @@ Vagrant.configure("2") do |config|
 		vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
 
-	# Chef Solo Provisioning
+	# Initialization Provisioning
+	config.vm.provision :shell, :path => ".chef/initialization.sh"
+
+	# Main Provisioning
 	config.vm.provision :chef_solo do |chef|
 
 		# Configuration

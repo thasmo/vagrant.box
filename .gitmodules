@@ -34,3 +34,12 @@
 [submodule ".chef/cookbook/ubuntu"]
 	path = .chef/cookbook/ubuntu
 	url = git@github.com:opscode-cookbooks/ubuntu.git
+[submodule ".chef/cookbook/runit"]
+	path = .chef/cookbook/runit
+	url = git@github.com:opscode-cookbooks/runit.git
+[submodule ".chef/cookbook/yum"]
+	path = .chef/cookbook/yum
+	url = git@github.com:opscode-cookbooks/yum.git
+[submodule ".chef/cookbook/xml"]
+	path = .chef/cookbook/xml
+	url = git@github.com:opscode-cookbooks/xml.git
