@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
 
 	# Box: Ubuntu Raring Ringtail (13.04)
-	config.vm.box = "raring"
+	config.vm.box = "raring64"
 	config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
 
 	# Network Setup
