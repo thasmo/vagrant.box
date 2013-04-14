@@ -33,13 +33,13 @@ run_list(
   "recipe[php::module_mysql]",
 
   # Base
-  "recipe[_box::module_igbinary]",
-  "recipe[_box::mod_vhost_alias]",
-  "recipe[_box::mod_actions]",
-  "recipe[_box::hosts]",
-  "recipe[_box::composer]",
-  "recipe[_box::mail]",
-  "recipe[_box::phing]",
+  "recipe[base::module_igbinary]",
+  "recipe[base::mod_vhost_alias]",
+  "recipe[base::mod_actions]",
+  "recipe[base::hosts]",
+  "recipe[base::composer]",
+  "recipe[base::mail]",
+  "recipe[base::phing]",
 )
 
 # Attributes

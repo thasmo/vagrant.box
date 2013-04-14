@@ -5,5 +5,5 @@ description "Sets up an email server"
 run_list(
 
   # Dovecot + Postfix
-  "recipe[_box::mail]",
+  "recipe[base::mail]",
 )
