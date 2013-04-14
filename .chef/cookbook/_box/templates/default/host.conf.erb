@@ -13,23 +13,6 @@ SetEnv ENVIRONMENT development
 	FastCgiExternalServer /usr/lib/cgi-bin/php5-fastcgi -socket /var/run/php5-fpm.sock -pass-header Authorization
 </IfModule>
 
-# Subdomains
-<VirtualHost *:80>
-	ServerAlias *.*.*.local
-	VirtualDocumentRoot "/vagrant/host/%-3.0.%-2.0-%-4+/htdocs/"
-	VirtualScriptAlias "/vagrant/host/%-3.0.%-2.0-%-4+/htdocs/"
-</VirtualHost>
-
-<VirtualHost *:443>
-	ServerAlias *.*.*.local
-	VirtualDocumentRoot "/vagrant/host/%-3.0.%-2.0-%-4+/htdocs/"
-	VirtualScriptAlias "/vagrant/host/%-3.0.%-2.0-%-4+/htdocs/"
-
-	SSLEngine On
-    SSLCertificateFile "/etc/apache2/ssl/server.crt"
-    SSLCertificateKeyFile "/etc/apache2/ssl/server.key"
-</VirtualHost>
-
 # Domains
 <VirtualHost *:80>
 	ServerAlias *.local
