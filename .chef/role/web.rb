@@ -38,7 +38,6 @@ run_list(
   "recipe[base::mod_actions]",
   "recipe[base::hosts]",
   "recipe[base::composer]",
-  "recipe[base::mail]",
   "recipe[base::phing]",
 )
 
