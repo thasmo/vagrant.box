@@ -12,10 +12,7 @@ if [ ! -f /home/vagrant/initialization ]; then
   sudo apt-get -q -y clean
 
   # install latest chef version
-  sudo wget -O setup.deb "http://www.opscode.com/chef/download?p=ubuntu&pv=12.10&m=x86_64"
-  sudo chmod +x setup.deb
-  sudo dpkg -i setup.deb
-  sudo rm -f setup.deb
+  sudo true && curl -L https://www.opscode.com/chef/install.sh | sudo bash
 
   # finish initialization
   touch /home/vagrant/initialization
