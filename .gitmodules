@@ -43,3 +43,15 @@
 [submodule ".chef/cookbook/generic/xml"]
 	path = .chef/cookbook/generic/xml
 	url = https://github.com/opscode-cookbooks/xml.git
+[submodule ".chef/cookbook/generic/git"]
+	path = .chef/cookbook/generic/git
+	url = https://github.com/opscode-cookbooks/git.git
+[submodule ".chef/cookbook/generic/dmg"]
+	path = .chef/cookbook/generic/dmg
+	url = https://github.com/opscode-cookbooks/dmg.git
+[submodule ".chef/cookbook/generic/windows"]
+	path = .chef/cookbook/generic/windows
+	url = https://github.com/opscode-cookbooks/windows.git
+[submodule ".chef/cookbook/generic/chef_handler"]
+	path = .chef/cookbook/generic/chef_handler
+	url = https://github.com/opscode-cookbooks/chef_handler.git
