@@ -1,45 +1,45 @@
 [submodule ".chef/cookbook/generic/sqlite"]
 	path = .chef/cookbook/generic/sqlite
-	url = git@github.com:opscode-cookbooks/sqlite.git
+	url = https://github.com/opscode-cookbooks/sqlite.git
 [submodule ".chef/cookbook/generic/apt"]
 	path = .chef/cookbook/generic/apt
-	url = git@github.com:opscode-cookbooks/apt.git
+	url = https://github.com/opscode-cookbooks/apt.git
 [submodule ".chef/cookbook/generic/cron"]
 	path = .chef/cookbook/generic/cron
-	url = git@github.com:opscode-cookbooks/cron.git
+	url = https://github.com/opscode-cookbooks/cron.git
 [submodule ".chef/cookbook/generic/openssl"]
 	path = .chef/cookbook/generic/openssl
-	url = git@github.com:opscode-cookbooks/openssl.git
+	url = https://github.com/opscode-cookbooks/openssl.git
 [submodule ".chef/cookbook/generic/memcached"]
 	path = .chef/cookbook/generic/memcached
-	url = git@github.com:opscode-cookbooks/memcached.git
+	url = https://github.com/opscode-cookbooks/memcached.git
 [submodule ".chef/cookbook/generic/imagemagick"]
 	path = .chef/cookbook/generic/imagemagick
-	url = git@github.com:opscode-cookbooks/imagemagick.git
+	url = https://github.com/opscode-cookbooks/imagemagick.git
 [submodule ".chef/cookbook/generic/mysql"]
 	path = .chef/cookbook/generic/mysql
-	url = git@github.com:opscode-cookbooks/mysql.git
+	url = https://github.com/opscode-cookbooks/mysql.git
 [submodule ".chef/cookbook/generic/apache2"]
 	path = .chef/cookbook/generic/apache2
-	url = git@github.com:opscode-cookbooks/apache2.git
+	url = https://github.com/opscode-cookbooks/apache2.git
 [submodule ".chef/cookbook/generic/php"]
 	path = .chef/cookbook/generic/php
-	url = git@github.com:opscode-cookbooks/php.git
+	url = https://github.com/opscode-cookbooks/php.git
 [submodule ".chef/cookbook/generic/locale"]
 	path = .chef/cookbook/generic/locale
-	url = git@github.com:hw-cookbooks/locale.git
+	url = https://github.com/hw-cookbooks/locale.git
 [submodule ".chef/cookbook/generic/build-essential"]
 	path = .chef/cookbook/generic/build-essential
-	url = git@github.com:opscode-cookbooks/build-essential.git
+	url = https://github.com/opscode-cookbooks/build-essential.git
 [submodule ".chef/cookbook/generic/ubuntu"]
 	path = .chef/cookbook/generic/ubuntu
-	url = git@github.com:opscode-cookbooks/ubuntu.git
+	url = https://github.com/opscode-cookbooks/ubuntu.git
 [submodule ".chef/cookbook/generic/runit"]
 	path = .chef/cookbook/generic/runit
-	url = git@github.com:opscode-cookbooks/runit.git
+	url = https://github.com/opscode-cookbooks/runit.git
 [submodule ".chef/cookbook/generic/yum"]
 	path = .chef/cookbook/generic/yum
-	url = git@github.com:opscode-cookbooks/yum.git
+	url = https://github.com/opscode-cookbooks/yum.git
 [submodule ".chef/cookbook/generic/xml"]
 	path = .chef/cookbook/generic/xml
-	url = git@github.com:opscode-cookbooks/xml.git
+	url = https://github.com/opscode-cookbooks/xml.git
