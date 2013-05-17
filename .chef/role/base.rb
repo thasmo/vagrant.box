@@ -16,7 +16,7 @@ run_list(
 
 # Attributes
 override_attributes(
- "ubuntu" => {
+  "ubuntu" => {
     "archive_url" => "mirror://mirrors.ubuntu.com/mirrors.txt",
     "include_source_packages" => false,
   }
