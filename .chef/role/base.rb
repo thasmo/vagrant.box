@@ -11,6 +11,7 @@ run_list(
   "recipe[cron]",
   "recipe[openssl]",
   "recipe[git]",
+  "recipe[zsh]",
 )
 
 # Attributes

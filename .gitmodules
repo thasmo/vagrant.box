@@ -55,3 +55,6 @@
 [submodule ".chef/cookbook/generic/chef_handler"]
 	path = .chef/cookbook/generic/chef_handler
 	url = https://github.com/opscode-cookbooks/chef_handler.git
+[submodule ".chef/cookbook/generic/zsh"]
+	path = .chef/cookbook/generic/zsh
+	url = https://github.com/opscode-cookbooks/zsh.git
