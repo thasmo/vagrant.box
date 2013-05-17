@@ -12,6 +12,7 @@ run_list(
   "recipe[openssl]",
   "recipe[git]",
   "recipe[zsh]",
+  "recipe[base::setup]",
 )
 
 # Attributes
