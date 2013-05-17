@@ -58,3 +58,6 @@
 [submodule ".chef/cookbook/generic/zsh"]
 	path = .chef/cookbook/generic/zsh
 	url = https://github.com/opscode-cookbooks/zsh.git
+[submodule ".chef/cookbook/generic/logrotate"]
+	path = .chef/cookbook/generic/logrotate
+	url = https://github.com/opscode-cookbooks/logrotate.git

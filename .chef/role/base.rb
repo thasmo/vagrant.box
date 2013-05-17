@@ -10,6 +10,7 @@ run_list(
   "recipe[locale]",
   "recipe[cron]",
   "recipe[openssl]",
+  "recipe[logrotate]",
   "recipe[git]",
   "recipe[zsh]",
   "recipe[base::setup]",
