@@ -44,7 +44,7 @@ run_list(
 # Attributes
 override_attributes(
   "php" => {
-    "packages" => ["php5-fpm", "php5-dev", "php5-cli", "php-pear", "php5-mcrypt", "php5-ffmpeg"],
+    "packages" => ["php5-fpm", "php5-dev", "php5-cli", "php-pear", "php5-mcrypt", "php5-ffmpeg", "php5-intl"],
     "conf_dir" => "/etc/php5/fpm",
     "directives" => {
       "expose_php" => "On",
