@@ -13,6 +13,7 @@ run_list(
   "recipe[logrotate]",
   "recipe[git]",
   "recipe[zsh]",
+  "recipe[base::zip]",
   "recipe[base::setup]",
 )
 
