@@ -28,12 +28,20 @@ Vagrant.configure("2") do |config|
 
   # VMware Workstation Configuration
   config.vm.provider :vmware_workstation do |provider|
-    provider.vmx['memsize'] = "2048"
+    provider.gui = false
+    provider.vmx["displayName"] = "Development"
+    provider.vmx["guestOS"] = "ubuntu-64"
+    provider.vmx["numvcpus"] = "4"
+    provider.vmx["memsize"] = "1024"
   end
 
   # VMware Fusion Configuration
   config.vm.provider :vmware_fusion do |provider|
-    provider.vmx['memsize'] = "2048"
+    provider.gui = false
+    provider.vmx["displayName"] = "Development"
+    provider.vmx["guestOS"] = "ubuntu-64"
+    provider.vmx["numvcpus"] = "4"
+    provider.vmx["memsize"] = "1024"
   end
 
   # Initialization Provisioning
