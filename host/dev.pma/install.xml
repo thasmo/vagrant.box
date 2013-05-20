@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Roundcube Installation" default="run">
+	<target name="run" depends="prepare,download,install,configure,move,clean" />
+
+	<target name="prepare">
+		<mkdir dir=".build" />
+		<mkdir dir="htdocs" />
+	</target>
+
+	<target name="download" depends="prepare">
+		<exec command="wget --content-disposition http://sourceforge.net/projects/phpmyadmin/files/latest/download" dir=".build" />
+	</target>
+
+	<target name="install" depends="download">
+		<exec command="unzip .build/*.zip -d .build" />
+		<exec command="mv .build/phpMyAdmin*/ .build/phpmyadmin/" />
+	</target>
+
+	<target name="configure" depends="install">
+		<exec command="cp config.inc.php .build/phpmyadmin/" />
+	</target>
+
+	<target name="move" depends="configure">
+		<exec command="mv .build/phpmyadmin/* htdocs/" />
+	</target>
+
+	<target name="clean" depends="move">
+		<exec command="rm -rf .build" />
+	</target>
+</project>

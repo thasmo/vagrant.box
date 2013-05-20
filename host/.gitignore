@@ -4,3 +4,7 @@
 
 !/dev.mail
 !/dev.mail/install.xml
+
+!/dev.pma
+!/dev.pma/install.xml
+!/dev.pma/config.inc.php
