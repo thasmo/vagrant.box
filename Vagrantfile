@@ -12,18 +12,28 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 443, host: 443
   config.vm.network :forwarded_port, guest: 3306, host: 3306
 
-  # VM Configuration
-  config.vm.provider :virtualbox do |vb|
-    vb.gui = false
-    vb.name = "Development"
-    vb.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.customize ["modifyvm", :id, "--acpi", "on"]
-    vb.customize ["modifyvm", :id, "--ioapic", "on"]
-    vb.customize ["modifyvm", :id, "--cpus", "4"]
-    vb.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
-    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-    vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  # VirtualBox Configuration
+  config.vm.provider :virtualbox do |provider|
+    provider.gui = false
+    provider.name = "Development"
+    provider.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
+    provider.customize ["modifyvm", :id, "--memory", "1024"]
+    provider.customize ["modifyvm", :id, "--acpi", "on"]
+    provider.customize ["modifyvm", :id, "--ioapic", "on"]
+    provider.customize ["modifyvm", :id, "--cpus", "4"]
+    provider.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
+    provider.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    provider.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  end
+
+  # VMware Workstation Configuration
+  config.vm.provider :vmware_workstation do |provider|
+    provider.vmx['memsize'] = "2048"
+  end
+
+  # VMware Fusion Configuration
+  config.vm.provider :vmware_fusion do |provider|
+    provider.vmx['memsize'] = "2048"
   end
 
   # Initialization Provisioning
