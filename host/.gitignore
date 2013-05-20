@@ -1,3 +1,6 @@
 # Directory specific
 *
 !.gitignore
+
+!/dev.mail
+!/dev.mail/install.xml
