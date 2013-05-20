@@ -7,9 +7,8 @@ Thumbs.db
 *.komodoproject
 
 # Project specific
-/*
+*
 !.gitignore
-!/.box
 !/.chef
 !/host
 !Vagrantfile
