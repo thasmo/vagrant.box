@@ -5,7 +5,6 @@ Vagrant.configure("2") do |config|
 
   # Box: Ubuntu Raring Ringtail (13.04)
   config.vm.box = "raring64"
-  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
 
   # Network Setup
   config.vm.network :forwarded_port, guest: 80, host: 80
@@ -13,7 +12,9 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 3306, host: 3306
 
   # VirtualBox Configuration
-  config.vm.provider :virtualbox do |provider|
+  config.vm.provider :virtualbox do |provider, config|
+    config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
+
     provider.gui = false
     provider.name = "Development"
     provider.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
@@ -27,7 +28,9 @@ Vagrant.configure("2") do |config|
   end
 
   # VMware Workstation Configuration
-  config.vm.provider :vmware_workstation do |provider|
+  config.vm.provider :vmware_workstation do |provider, config|
+    config.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
+
     provider.gui = false
     provider.vmx["displayName"] = "Development"
     provider.vmx["guestOS"] = "ubuntu-64"
@@ -36,7 +39,9 @@ Vagrant.configure("2") do |config|
   end
 
   # VMware Fusion Configuration
-  config.vm.provider :vmware_fusion do |provider|
+  config.vm.provider :vmware_fusion do |provider, override|
+    config.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
+
     provider.gui = false
     provider.vmx["displayName"] = "Development"
     provider.vmx["guestOS"] = "ubuntu-64"
