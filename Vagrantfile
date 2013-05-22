@@ -29,6 +29,7 @@ Vagrant.configure("2") do |config|
 
   # VMware Workstation Configuration
   config.vm.provider :vmware_workstation do |provider, config|
+    config.vm.box = "precise64"
     config.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
 
     provider.gui = false
@@ -40,6 +41,7 @@ Vagrant.configure("2") do |config|
 
   # VMware Fusion Configuration
   config.vm.provider :vmware_fusion do |provider, override|
+    config.vm.box = "precise64"
     config.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
 
     provider.gui = false
