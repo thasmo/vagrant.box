@@ -1,31 +1,28 @@
-# Configuration
-DocumentRoot /vagrant/
-UseCanonicalName Off
-
-# Environment Variables
-SetEnv ENVIRONMENT development
-
-# PHP Configuration
-<IfModule mod_fastcgi.c>
-	AddHandler php5-fastcgi .php
-	Action php5-fastcgi /php5-fastcgi
-	Alias /php5-fastcgi /usr/lib/cgi-bin/php5-fastcgi
-	FastCgiExternalServer /usr/lib/cgi-bin/php5-fastcgi -socket /var/run/php5-fpm.sock -pass-header Authorization
-</IfModule>
-
-# Domains
 <VirtualHost *:80>
-	ServerAlias *.local
-	VirtualDocumentRoot "/vagrant/host/%-2+/htdocs/"
-	VirtualScriptAlias "/vagrant/host/%-2+/htdocs/"
-</VirtualHost>
+  ServerName <%= @params[:server_name] %>
+  DocumentRoot <%= @params[:docroot] %>
 
-<VirtualHost *:443>
-	ServerAlias *.local
-	VirtualDocumentRoot "/vagrant/host/%-2+/htdocs/"
-	VirtualScriptAlias "/vagrant/host/%-2+/htdocs/"
+  <Directory <%= @params[:docroot] %>>
+    Options <%= [@params[:directory_options] || "FollowSymLinks" ].flatten.join " " %>
+    AllowOverride <%= [@params[:allow_override] || "None" ].flatten.join " " %>
+    Order allow,deny
+    Allow from all
+  </Directory>
 
-	SSLEngine On
-    SSLCertificateFile "/etc/ssl/certs/ssl-cert-snakeoil.pem"
-    SSLCertificateKeyFile "/etc/ssl/private/ssl-cert-snakeoil.key"
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride None
+  </Directory>
+
+  LogLevel info
+  ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
+  CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-access.log combined
+
+  <% if @params[:directory_index] -%>
+  DirectoryIndex <%= [@params[:directory_index]].flatten.join " " %>
+  <% end -%>
+
+  RewriteEngine On
+  RewriteLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-rewrite.log
+  RewriteLogLevel 0
 </VirtualHost>
