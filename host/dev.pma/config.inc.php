@@ -10,6 +10,7 @@ $cfg['McryptDisableWarning'] = true;
 $cfg['UserprefsDeveloperTab'] = true;
 $cfg['Error_Handler']['display'] = true;
 $cfg['NumRecentTables'] = 100;
+$cfg['MaxRows'] = 100;
 
 /* Server: localhost [1] */
 $cfg['Servers'][1]['verbose'] = 'localhost';
