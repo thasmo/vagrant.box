@@ -2,6 +2,10 @@ execute "disable-default-site" do
 	command "sudo a2dissite default"
 end
 
+execute "remove-other-vhosts-access-logs" do
+	command "sudo rm -f /etc/apache2/conf.d/other-vhosts-access-log"
+end
+
 cookbook_file node['apache']['dir'] + "/conf.d/custom" do
 	source "custom.conf"
 	mode 00644
