@@ -14,17 +14,12 @@
 		AllowOverride None
 	</Directory>
 
-	LogLevel info
+	LogLevel error
 	ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
-	CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-access.log combined
 
 	<% if @params[:directory_index] -%>
 	DirectoryIndex <%= [@params[:directory_index]].flatten.join " " %>
 	<% end -%>
-
-	RewriteEngine On
-	RewriteLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-rewrite.log
-	RewriteLogLevel 0
 </VirtualHost>
 
 <VirtualHost *:443>
@@ -43,17 +38,12 @@
 		AllowOverride None
 	</Directory>
 
-	LogLevel info
+	LogLevel error
 	ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
-	CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-access.log combined
 
 	<% if @params[:directory_index] -%>
 	DirectoryIndex <%= [@params[:directory_index]].flatten.join " " %>
 	<% end -%>
-
-	RewriteEngine On
-	RewriteLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-rewrite.log
-	RewriteLogLevel 0
 
 	SSLEngine On
 	SSLCertificateFile "/etc/ssl/certs/ssl-cert-snakeoil.pem"
