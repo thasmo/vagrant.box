@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Roundcube Installation" default="run">
+<project name="phpMyAdmin Installation" default="run">
 	<target name="run" depends="prepare,download,install,configure,move,clean" />
 
 	<target name="prepare">
