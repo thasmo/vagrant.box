@@ -1,61 +1,61 @@
 <VirtualHost *:80>
-  ServerName <%= @params[:server_name] %>
-  DocumentRoot <%= @params[:docroot] %>
+	ServerName <%= @params[:server_name] %>
+	DocumentRoot <%= @params[:docroot] %>
 
-  <Directory <%= @params[:docroot] %>>
-    Options <%= [@params[:directory_options] || "FollowSymLinks" ].flatten.join " " %>
-    AllowOverride <%= [@params[:allow_override] || "None" ].flatten.join " " %>
-    Order allow,deny
-    Allow from all
-  </Directory>
+	<Directory <%= @params[:docroot] %>>
+		Options <%= [@params[:directory_options] || "FollowSymLinks" ].flatten.join " " %>
+		AllowOverride <%= [@params[:allow_override] || "None" ].flatten.join " " %>
+		Order allow,deny
+		Allow from all
+	</Directory>
 
-  <Directory />
-    Options FollowSymLinks
-    AllowOverride None
-  </Directory>
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
 
-  LogLevel info
-  ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
-  CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-access.log combined
+	LogLevel info
+	ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
+	CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-access.log combined
 
-  <% if @params[:directory_index] -%>
-  DirectoryIndex <%= [@params[:directory_index]].flatten.join " " %>
-  <% end -%>
+	<% if @params[:directory_index] -%>
+	DirectoryIndex <%= [@params[:directory_index]].flatten.join " " %>
+	<% end -%>
 
-  RewriteEngine On
-  RewriteLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-rewrite.log
-  RewriteLogLevel 0
+	RewriteEngine On
+	RewriteLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-rewrite.log
+	RewriteLogLevel 0
 </VirtualHost>
 
 <VirtualHost *:443>
-  ServerName <%= @params[:server_name] %>
-  DocumentRoot <%= @params[:docroot] %>
+	ServerName <%= @params[:server_name] %>
+	DocumentRoot <%= @params[:docroot] %>
 
-  <Directory <%= @params[:docroot] %>>
-    Options <%= [@params[:directory_options] || "FollowSymLinks" ].flatten.join " " %>
-    AllowOverride <%= [@params[:allow_override] || "None" ].flatten.join " " %>
-    Order allow,deny
-    Allow from all
-  </Directory>
+	<Directory <%= @params[:docroot] %>>
+		Options <%= [@params[:directory_options] || "FollowSymLinks" ].flatten.join " " %>
+		AllowOverride <%= [@params[:allow_override] || "None" ].flatten.join " " %>
+		Order allow,deny
+		Allow from all
+	</Directory>
 
-  <Directory />
-    Options FollowSymLinks
-    AllowOverride None
-  </Directory>
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
 
-  LogLevel info
-  ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
-  CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-access.log combined
+	LogLevel info
+	ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
+	CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-access.log combined
 
-  <% if @params[:directory_index] -%>
-  DirectoryIndex <%= [@params[:directory_index]].flatten.join " " %>
-  <% end -%>
+	<% if @params[:directory_index] -%>
+	DirectoryIndex <%= [@params[:directory_index]].flatten.join " " %>
+	<% end -%>
 
-  RewriteEngine On
-  RewriteLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-rewrite.log
-  RewriteLogLevel 0
+	RewriteEngine On
+	RewriteLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-rewrite.log
+	RewriteLogLevel 0
 
-  SSLEngine On
-  SSLCertificateFile "/etc/ssl/certs/ssl-cert-snakeoil.pem"
-  SSLCertificateKeyFile "/etc/ssl/private/ssl-cert-snakeoil.key"
+	SSLEngine On
+	SSLCertificateFile "/etc/ssl/certs/ssl-cert-snakeoil.pem"
+	SSLCertificateKeyFile "/etc/ssl/private/ssl-cert-snakeoil.key"
 </VirtualHost>
