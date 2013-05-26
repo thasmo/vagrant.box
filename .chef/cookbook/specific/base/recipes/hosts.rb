@@ -44,7 +44,7 @@ Dir.foreach("/var/www") do |host|
     end
   }
 
-  subdirectory = "/var/www/" + host + "/sub"
+  subdirectory = "/var/www/" + host + "/host"
 
   if Dir.exist?(subdirectory)
     Dir.foreach(subdirectory) do |subhost|
