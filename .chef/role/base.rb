@@ -6,6 +6,7 @@ run_list(
 
   # Common
   "recipe[ubuntu]",
+  "recipe[base::dotdeb]",
   "recipe[build-essential]",
   "recipe[locale]",
   "recipe[cron]",
