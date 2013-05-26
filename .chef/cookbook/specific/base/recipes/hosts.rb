@@ -9,13 +9,13 @@ cookbook_file node['apache']['dir'] + "/conf.d/custom" do
 	group node['apache']['root_group']
 end
 
-Dir.foreach("/vagrant/host") do |host|
+Dir.foreach("/var/www") do |host|
 	next if /^(\.|~|_)/.match(host)
 
 	directories = [
-		"/vagrant/host/" + host + "/htdocs",
-		"/vagrant/host/" + host + "/httpdocs",
-		"/vagrant/host/" + host + "/public",
+		"/var/www/" + host + "/htdocs",
+		"/var/www/" + host + "/httpdocs",
+		"/var/www/" + host + "/public",
 	]
 
 	directories.each { |directory|
