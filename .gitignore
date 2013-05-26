@@ -11,4 +11,5 @@ Thumbs.db
 !.gitignore
 !.chef
 !host
+!log
 !Vagrantfile
