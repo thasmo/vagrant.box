@@ -1,5 +1,7 @@
 <VirtualHost *:80>
 	ServerName <%= @params[:server_name] %>
+	ServerAlias *.<%= @params[:server_name] %>
+
 	DocumentRoot <%= @params[:docroot] %>
 
 	<Directory <%= @params[:docroot] %>>
@@ -24,6 +26,8 @@
 
 <VirtualHost *:443>
 	ServerName <%= @params[:server_name] %>
+	ServerAlias *.<%= @params[:server_name] %>
+
 	DocumentRoot <%= @params[:docroot] %>
 
 	<Directory <%= @params[:docroot] %>>
