@@ -48,6 +48,7 @@ override_attributes(
     "conf_dir" => "/etc/php5/fpm",
     "directives" => {
       "expose_php" => "On",
+      "short_open_tag" => "Off",
       "default_charset" => "utf-8",
       "display_errors" => "On",
       "error_reporting" => "E_ALL",
