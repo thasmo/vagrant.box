@@ -46,25 +46,5 @@ override_attributes(
   "php" => {
     "packages" => ["php5-fpm", "php5-dev", "php5-cli", "php-pear", "php5-mcrypt", "php5-ffmpeg", "php5-intl"],
     "conf_dir" => "/etc/php5/fpm",
-    "directives" => {
-      "expose_php" => "On",
-      "short_open_tag" => "Off",
-      "default_charset" => "utf-8",
-      "display_errors" => "On",
-      "error_reporting" => "E_ALL",
-      "memory_limit" => "256M",
-      "post_max_size" => "128M",
-      "upload_max_filesize" => "128M",
-      "max_file_uploads" => "20",
-      "date.timezone" => "UTC",
-      "phar.readonly" => "Off",
-      "mail.add_x_header" => "Off",
-      "session.serialize_handler" => "igbinary",
-      "apc.shm_size" => "256M",
-      "apc.max_file_size" => "1M",
-      "apc.num_files_hint" => "10000",
-      "apc.user_entries_hint" => "10000",
-      "apc.serializer" => "igbinary",
-    }
   }
 )
