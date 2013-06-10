@@ -33,6 +33,7 @@ run_list(
   "recipe[php::module_mysql]",
 
   # Base
+  "recipe[base::configuration]",
   "recipe[base::module_igbinary]",
   "recipe[base::mod_vhost_alias]",
   "recipe[base::mod_actions]",
