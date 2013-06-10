@@ -8,7 +8,7 @@
 		<mkdir dir="htdocs" />
 	</target>
 
-	<target name="download" depends="">
+	<target name="download" depends="prepare">
 		<exec command="wget --content-disposition http://sourceforge.net/projects/roundcubemail/files/latest/download" dir=".build" />
 	</target>
 

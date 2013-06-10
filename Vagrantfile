@@ -11,6 +11,11 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 443, host: 443
   config.vm.network :forwarded_port, guest: 3306, host: 3306
 
+  # Synced Folders
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder "host", "/var/www"
+  config.vm.synced_folder "log", "/var/log/apache2"
+
   # VirtualBox Configuration
   config.vm.provider :virtualbox do |provider, config|
     config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"

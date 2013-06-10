@@ -6,6 +6,7 @@ run_list(
 
   # Common
   "recipe[ubuntu]",
+  "recipe[base::dotdeb]",
   "recipe[build-essential]",
   "recipe[locale]",
   "recipe[cron]",
@@ -13,6 +14,8 @@ run_list(
   "recipe[logrotate]",
   "recipe[git]",
   "recipe[zsh]",
+  "recipe[base::ssl-cert]",
+  "recipe[base::zip]",
   "recipe[base::setup]",
 )
 
