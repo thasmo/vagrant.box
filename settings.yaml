@@ -1,0 +1,6 @@
+# Guest Configuration
+guest:
+  name: 'Development'
+  architecture: '32-bit'
+  memory: 1024
+  cpus: 1

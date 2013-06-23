@@ -12,4 +12,5 @@ Thumbs.db
 !.chef
 !host
 !log
+!settings.yaml
 !Vagrantfile
