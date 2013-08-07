@@ -11,8 +11,9 @@ if [ ! -f /home/vagrant/initialization ]; then
   sudo apt-get -q -y autoremove
   sudo apt-get -q -y clean
 
-  # install latest chef version
-  sudo true && curl -L https://www.opscode.com/chef/install.sh | sudo bash
+  # download and install chef
+  sudo wget --content-disposition https://www.opscode.com/chef/install.sh
+  sudo sh install.sh
 
   # finish initialization
   touch /home/vagrant/initialization
