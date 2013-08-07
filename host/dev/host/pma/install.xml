@@ -9,23 +9,23 @@
 	</target>
 
 	<target name="download" depends="prepare">
-		<exec command="wget --content-disposition http://sourceforge.net/projects/phpmyadmin/files/latest/download" dir=".build" />
+		<exec command="sudo wget --content-disposition http://sourceforge.net/projects/phpmyadmin/files/latest/download" dir=".build" />
 	</target>
 
 	<target name="install" depends="download">
-		<exec command="unzip .build/*.zip -d .build" />
-		<exec command="mv .build/phpMyAdmin*/ .build/phpmyadmin/" />
+		<exec command="sudo unzip .build/*.zip -d .build" />
+		<exec command="sudo mv .build/phpMyAdmin*/ .build/phpmyadmin/" />
 	</target>
 
 	<target name="configure" depends="install">
-		<exec command="cp config.inc.php .build/phpmyadmin/" />
+		<exec command="sudo cp config.inc.php .build/phpmyadmin/" />
 	</target>
 
 	<target name="move" depends="configure">
-		<exec command="mv .build/phpmyadmin/* htdocs/" />
+		<exec command="sudo mv .build/phpmyadmin/* htdocs/" />
 	</target>
 
 	<target name="clean" depends="move">
-		<exec command="rm -rf .build" />
+		<exec command="sudo rm -rf .build" />
 	</target>
 </project>
