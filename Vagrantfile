@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
 
   # Synced Folders
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder "host", "/var/www"
-  config.vm.synced_folder "log", "/var/log/apache2"
+  config.vm.synced_folder "host", "/var/www", :nfs => true
+  config.vm.synced_folder "log", "/var/log/apache2", :nfs => true
 
   # VM Configuration
   config.vm.provider :virtualbox do |vb|
