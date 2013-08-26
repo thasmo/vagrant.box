@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     provider.customize ["modifyvm", :id, "--memory", "1024"]
     provider.customize ["modifyvm", :id, "--acpi", "on"]
     provider.customize ["modifyvm", :id, "--ioapic", "on"]
-    provider.customize ["modifyvm", :id, "--cpus", "4"]
+    provider.customize ["modifyvm", :id, "--cpus", "2"]
     provider.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
     provider.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     provider.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
     provider.gui = false
     provider.vmx["displayName"] = "Development"
     provider.vmx["guestOS"] = "ubuntu-64"
-    provider.vmx["numvcpus"] = "4"
+    provider.vmx["numvcpus"] = "2"
     provider.vmx["memsize"] = "1024"
   end
 
@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
     provider.gui = false
     provider.vmx["displayName"] = "Development"
     provider.vmx["guestOS"] = "ubuntu-64"
-    provider.vmx["numvcpus"] = "4"
+    provider.vmx["numvcpus"] = "2"
     provider.vmx["memsize"] = "1024"
   end
 
