@@ -18,8 +18,6 @@ Vagrant.configure("2") do |config|
 
   # VirtualBox Configuration
   config.vm.provider :virtualbox do |provider, config|
-    config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
-
     provider.gui = false
     provider.name = "Development"
     provider.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
@@ -34,9 +32,6 @@ Vagrant.configure("2") do |config|
 
   # VMware Workstation Configuration
   config.vm.provider :vmware_workstation do |provider, config|
-    config.vm.box = "precise64"
-    config.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
-
     provider.gui = false
     provider.vmx["displayName"] = "Development"
     provider.vmx["guestOS"] = "ubuntu-64"
@@ -46,9 +41,6 @@ Vagrant.configure("2") do |config|
 
   # VMware Fusion Configuration
   config.vm.provider :vmware_fusion do |provider, override|
-    config.vm.box = "precise64"
-    config.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
-
     provider.gui = false
     provider.vmx["displayName"] = "Development"
     provider.vmx["guestOS"] = "ubuntu-64"
