@@ -5,7 +5,11 @@
 require "yaml"
 
 # Settings
-settings = YAML.load_file("settings.yaml")
+if File.exists?("settings.yaml")
+  settings = YAML.load_file("settings.yaml")
+else
+  abort("No settings.yaml file found.")
+end
 
 # Vagrant Configuration
 Vagrant.configure("2") do |config|
