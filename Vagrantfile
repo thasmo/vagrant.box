@@ -15,11 +15,7 @@ end
 Vagrant.configure("2") do |config|
 
   # Base Box
-  if settings["guest"]["architecture"] == "64-bit"
-    config.vm.box = "raring64"
-  else
-    config.vm.box = "raring32"
-  end
+  config.vm.box = settings["guest"]["architecture"] == "64-bit" ? "raring64" : "raring32"
 
   # Network Setup
   config.vm.network :forwarded_port, guest: 80, host: 80
