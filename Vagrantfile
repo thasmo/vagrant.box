@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |provider, config|
     provider.gui = false
     provider.name = settings["guest"]["name"]
-    provider.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
+    provider.customize ["modifyvm", :id, "--ostype", settings["guest"]["architecture"] == "64-bit" ? "Ubuntu_64" : "Ubuntu"]
     provider.customize ["modifyvm", :id, "--memory", settings["guest"]["memory"].to_i]
     provider.customize ["modifyvm", :id, "--acpi", "on"]
     provider.customize ["modifyvm", :id, "--ioapic", "on"]
@@ -45,7 +45,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :vmware_workstation do |provider, config|
     provider.gui = false
     provider.vmx["displayName"] = settings["guest"]["name"]
-    provider.vmx["guestOS"] = "ubuntu-64"
+    provider.vmx["guestOS"] = settings["guest"]["architecture"] == "64-bit" ? "ubuntu-64" : "ubuntu"
     provider.vmx["numvcpus"] = settings["guest"]["cpus"].to_i
     provider.vmx["memsize"] = settings["guest"]["memory"].to_i
   end
@@ -54,7 +54,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :vmware_fusion do |provider, override|
     provider.gui = false
     provider.vmx["displayName"] = settings["guest"]["name"]
-    provider.vmx["guestOS"] = "ubuntu-64"
+    provider.vmx["guestOS"] = settings["guest"]["architecture"] == "64-bit" ? "ubuntu-64" : "ubuntu"
     provider.vmx["numvcpus"] = settings["guest"]["cpus"].to_i
     provider.vmx["memsize"] = settings["guest"]["memory"].to_i
   end
