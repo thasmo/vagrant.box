@@ -8,6 +8,7 @@ run_list(
   "recipe[memcached]",
   "recipe[imagemagick]",
   "recipe[sqlite]",
+  "recipe[nodejs]",
 
   # Apache
   "recipe[apache2]",

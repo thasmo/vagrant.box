@@ -61,3 +61,6 @@
 [submodule ".chef/cookbook/generic/logrotate"]
 	path = .chef/cookbook/generic/logrotate
 	url = https://github.com/opscode-cookbooks/logrotate.git
+[submodule ".chef/cookbook/generic/nodejs"]
+	path = .chef/cookbook/generic/nodejs
+	url = https://github.com/mdxp/nodejs-cookbook.git
