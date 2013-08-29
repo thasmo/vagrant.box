@@ -13,10 +13,8 @@ Vagrant.configure("2") do |config|
   # Base Box
   if settings["guest"]["architecture"] == "64-bit"
     config.vm.box = "raring64"
-    config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
   else
     config.vm.box = "raring32"
-    config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-i386-vagrant-disk1.box"
   end
 
   # Network Setup
@@ -26,21 +24,39 @@ Vagrant.configure("2") do |config|
 
   # Synced Folders
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder "host", "/var/www"
-  config.vm.synced_folder "log", "/var/log/apache2"
+  config.vm.synced_folder "host", "/var/www", :nfs => true
+  config.vm.synced_folder "log", "/var/log/apache2", :nfs => true
 
-  # VM Configuration
-  config.vm.provider :virtualbox do |vb|
-    vb.gui = false
-    vb.name = settings["guest"]["name"]
-    vb.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
-    vb.customize ["modifyvm", :id, "--memory", settings["guest"]["memory"].to_i]
-    vb.customize ["modifyvm", :id, "--cpus", settings["guest"]["cpus"].to_i]
-    vb.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
-    vb.customize ["modifyvm", :id, "--acpi", "on"]
-    vb.customize ["modifyvm", :id, "--ioapic", "on"]
-    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-    vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  # VirtualBox Configuration
+  config.vm.provider :virtualbox do |provider, config|
+    provider.gui = false
+    provider.name = settings["guest"]["name"]
+    provider.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
+    provider.customize ["modifyvm", :id, "--memory", settings["guest"]["memory"].to_i]
+    provider.customize ["modifyvm", :id, "--acpi", "on"]
+    provider.customize ["modifyvm", :id, "--ioapic", "on"]
+    provider.customize ["modifyvm", :id, "--cpus", settings["guest"]["cpus"].to_i]
+    provider.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
+    provider.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    provider.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  end
+
+  # VMware Workstation Configuration
+  config.vm.provider :vmware_workstation do |provider, config|
+    provider.gui = false
+    provider.vmx["displayName"] = settings["guest"]["name"]
+    provider.vmx["guestOS"] = "ubuntu-64"
+    provider.vmx["numvcpus"] = settings["guest"]["cpus"].to_i
+    provider.vmx["memsize"] = settings["guest"]["memory"].to_i
+  end
+
+  # VMware Fusion Configuration
+  config.vm.provider :vmware_fusion do |provider, override|
+    provider.gui = false
+    provider.vmx["displayName"] = settings["guest"]["name"]
+    provider.vmx["guestOS"] = "ubuntu-64"
+    provider.vmx["numvcpus"] = settings["guest"]["cpus"].to_i
+    provider.vmx["memsize"] = settings["guest"]["memory"].to_i
   end
 
   # Initialization Provisioning
