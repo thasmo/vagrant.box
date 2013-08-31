@@ -5,11 +5,13 @@ Thumbs.db
 # IDE specific
 .komodotools
 *.komodoproject
+.idea
 
 # Project specific
-/*
-!.gitignore
-!.chef
-!host
-!log
-!Vagrantfile
+.vagrant
+
+# Common
+/*/
+!/.chef
+!/host
+!/log
