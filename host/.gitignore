@@ -13,3 +13,11 @@
 !/dev/host/pma/htdocs/
 /dev/host/pma/htdocs/*
 !/dev/host/pma/htdocs/install/
+
+# Roundcube
+!/dev/host/mail/
+/dev/host/mail/*
+!/dev/host/mail/install.xml
+!/dev/host/mail/htdocs/
+/dev/host/mail/htdocs/*
+!/dev/host/mail/htdocs/install/
