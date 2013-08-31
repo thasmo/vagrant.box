@@ -4,3 +4,12 @@
 /dev/*
 !/dev/host/
 /dev/host/*
+
+# PMA
+!/dev/host/pma/
+/dev/host/pma/*
+!/dev/host/pma/install.xml
+!/dev/host/pma/config.inc.php
+!/dev/host/pma/htdocs/
+/dev/host/pma/htdocs/*
+!/dev/host/pma/htdocs/install/
