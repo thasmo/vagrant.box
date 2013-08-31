@@ -1,3 +1,6 @@
-# Directory specific
+# Common
 /*
-!.gitignore
+!/dev/
+/dev/*
+!/dev/host/
+/dev/host/*
