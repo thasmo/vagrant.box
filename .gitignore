@@ -2,13 +2,7 @@
 .DS_Store
 Thumbs.db
 
-# IDE specific
-.komodotools
-*.komodoproject
-.idea
-
 # Project specific
-.vagrant
 *.lock
 
 # Common
