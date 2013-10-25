@@ -9,6 +9,9 @@ Vagrant.configure("2") do |config|
   # General
   config.vm.hostname = "vagrant"
 
+  # SSH
+  config.ssh.forward_agent = true
+
   # Network Setup
   config.vm.network :forwarded_port, guest: 80, host: 80
   config.vm.network :forwarded_port, guest: 443, host: 443
