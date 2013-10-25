@@ -17,6 +17,12 @@ Vagrant.configure("2") do |config|
   # Base Box
   config.vm.box = settings["guest"]["architecture"] == "64-bit" ? "raring64" : "raring32"
 
+  # General
+  config.vm.hostname = "vagrant"
+
+  # SSH
+  config.ssh.forward_agent = true
+
   # Network Setup
   config.vm.network :forwarded_port, guest: 80, host: 80
   config.vm.network :forwarded_port, guest: 443, host: 443

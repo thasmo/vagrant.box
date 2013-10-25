@@ -9,17 +9,17 @@
 	</target>
 
 	<target name="download" depends="prepare">
-		<exec command="sudo wget --content-disposition http://sourceforge.net/projects/roundcubemail/files/latest/download" dir=".build" />
+		<httpget url="http://sourceforge.net/projects/roundcubemail/files/latest/download" dir=".build" filename="roundcube.tar.gz" followRedirects="true" />
 	</target>
 
 	<target name="install" depends="download">
-		<exec command="sudo tar -xzf .build/*.tar.gz -C .build" />
+		<untar file=".build/roundcube.tar.gz" todir=".build" forceExtract="true" />
 
-		<exec command="sudo mv .build/roundcube*/ .build/roundcube/" />
-		<exec command="sudo mv .build/roundcube/config/main.inc.php.dist .build/roundcube/config/main.inc.php" />
-		<exec command="sudo mv .build/roundcube/config/db.inc.php.dist .build/roundcube/config/db.inc.php" />
+		<exec command="mv .build/roundcubemail*/ .build/roundcube/" />
+		<exec command="mv .build/roundcube/config/main.inc.php.dist .build/roundcube/config/main.inc.php" />
+		<exec command="mv .build/roundcube/config/db.inc.php.dist .build/roundcube/config/db.inc.php" />
 
-		<exec command="sudo sqlite3 ./.build/roundcube/sqlite.db &lt; ./.build/roundcube/SQL/sqlite.initial.sql" />
+		<exec command="sqlite3 ./.build/roundcube/sqlite.db &lt; ./.build/roundcube/SQL/sqlite.initial.sql" />
 	</target>
 
 	<target name="configure" depends="install">
@@ -52,10 +52,10 @@
 	</target>
 
 	<target name="move" depends="configure">
-		<exec command="sudo mv .build/roundcube/* htdocs/" />
+		<exec command="mv .build/roundcube/* htdocs/" />
 	</target>
 
 	<target name="clean" depends="move">
-		<exec command="sudo rm -rf .build" />
+		<exec command="rm -rf .build" />
 	</target>
 </project>

@@ -2,15 +2,12 @@
 .DS_Store
 Thumbs.db
 
-# IDE specific
-.komodotools
-*.komodoproject
-
 # Project specific
-/*
-!.gitignore
-!.chef
-!host
-!log
-!settings.dist.yaml
-!Vagrantfile
+/settings.yaml
+*.lock
+
+# Common
+/*/
+!/.chef
+!/host
+!/log
