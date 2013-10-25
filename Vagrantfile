@@ -6,6 +6,9 @@ Vagrant.configure("2") do |config|
   # Box: Ubuntu Raring Ringtail (13.04)
   config.vm.box = "raring64"
 
+  # General
+  config.vm.hostname = "vagrant"
+
   # Network Setup
   config.vm.network :forwarded_port, guest: 80, host: 80
   config.vm.network :forwarded_port, guest: 443, host: 443
