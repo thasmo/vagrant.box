@@ -60,7 +60,7 @@ Vagrant.configure("2") do |config|
   end
 
   # VMware Fusion Configuration
-  config.vm.provider :vmware_fusion do |provider, override|
+  config.vm.provider :vmware_fusion do |provider, config|
     provider.gui = false
     provider.vmx["displayName"] = settings["guest"]["name"]
     provider.vmx["guestOS"] = settings["guest"]["architecture"] == "64-bit" ? "ubuntu-64" : "ubuntu"
