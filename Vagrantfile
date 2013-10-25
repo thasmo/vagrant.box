@@ -40,11 +40,14 @@ Vagrant.configure("2") do |config|
     provider.customize ["modifyvm", :id, "--ostype", settings["guest"]["architecture"] == "64-bit" ? "Ubuntu_64" : "Ubuntu"]
     provider.customize ["modifyvm", :id, "--memory", settings["guest"]["memory"].to_i]
     provider.customize ["modifyvm", :id, "--acpi", "on"]
-    provider.customize ["modifyvm", :id, "--ioapic", "on"]
     provider.customize ["modifyvm", :id, "--cpus", settings["guest"]["cpus"].to_i]
     provider.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
     provider.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     provider.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+
+    if settings["guest"]["cpus"].to_i > 1
+      provider.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
   end
 
   # VMware Workstation Configuration
