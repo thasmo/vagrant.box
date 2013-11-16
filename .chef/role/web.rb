@@ -48,5 +48,8 @@ override_attributes(
   "php" => {
     "packages" => ["php5-fpm", "php5-dev", "php5-cli", "php-pear", "php5-mcrypt", "php5-ffmpeg", "php5-intl"],
     "conf_dir" => "/etc/php5/fpm",
+  },
+  "nodejs" => {
+    "version" => "0.10.22",
   }
 )
