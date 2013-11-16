@@ -18,7 +18,7 @@
 	url = https://github.com/opscode-cookbooks/imagemagick.git
 [submodule ".chef/cookbook/generic/mysql"]
 	path = .chef/cookbook/generic/mysql
-	url = https://github.com/opscode-cookbooks/mysql.git
+	url = https://github.com/thasmo/mysql.git
 [submodule ".chef/cookbook/generic/apache2"]
 	path = .chef/cookbook/generic/apache2
 	url = https://github.com/opscode-cookbooks/apache2.git

@@ -14,7 +14,7 @@ execute "remove-all-available-sites" do
   command "sudo rm -f /etc/apache2/sites-available/*"
 end
 
-cookbook_file node['apache']['dir'] + "/conf.d/custom" do
+cookbook_file node['apache']['dir'] + "/conf.d/custom.conf" do
   source "custom.conf"
   mode 00644
   owner "root"
