@@ -85,5 +85,12 @@ Vagrant.configure('2') do |config|
     chef.add_role('web')
     chef.add_role('email')
     chef.add_role('database')
+
+    # Attributes
+    chef.json = {
+      'base' => {
+        'domain' => settings['webserver']['domain']
+      }
+    }
   end
 end

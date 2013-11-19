@@ -14,3 +14,7 @@ guest:
   architecture: '32-bit'
   memory: 1024
   cpus: 1
+
+# Webserver
+webserver:
+  domain: 'local'
