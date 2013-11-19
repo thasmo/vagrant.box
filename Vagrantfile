@@ -30,8 +30,9 @@ Vagrant.configure('2') do |config|
 
   # Synced Folders
   config.vm.synced_folder '.', '/vagrant', disabled: true
-  config.vm.synced_folder 'host', '/var/www', :nfs => true
-  config.vm.synced_folder 'log', '/var/log/apache2', :nfs => true
+  settings['vagrant']['folders'].each do |name, folder|
+    config.vm.synced_folder name, folder['path'], :nfs => folder['nfs']
+  end
 
   # VirtualBox Configuration
   config.vm.provider :virtualbox do |provider, config|
