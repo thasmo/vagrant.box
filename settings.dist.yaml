@@ -8,7 +8,7 @@ vagrant:
       path: '/var/log/apache2'
       nfs: true
 
-# Guest Configuration
+# Guest
 guest:
   name: 'Development'
   architecture: '32-bit'
