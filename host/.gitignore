@@ -8,16 +8,12 @@
 # PMA
 !/dev/host/pma/
 /dev/host/pma/*
-!/dev/host/pma/install.xml
+!/dev/host/pma/install.sh
 !/dev/host/pma/config.inc.php
 !/dev/host/pma/htdocs/
-/dev/host/pma/htdocs/*
-!/dev/host/pma/htdocs/install/
 
 # Roundcube
 !/dev/host/mail/
 /dev/host/mail/*
-!/dev/host/mail/install.xml
+!/dev/host/mail/install.sh
 !/dev/host/mail/htdocs/
-/dev/host/mail/htdocs/*
-!/dev/host/mail/htdocs/install/
