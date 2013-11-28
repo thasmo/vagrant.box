@@ -71,4 +71,7 @@ Vagrant.configure("2") do |config|
     chef.add_role("email")
     chef.add_role("database")
   end
+
+  # Application Provisioning
+  config.vm.provision :shell, :path => ".chef/application.sh"
 end
