@@ -33,7 +33,7 @@ Dir.foreach("/var/www") do |host|
   directories.each { |directory|
 
     if Dir.exist?(directory)
-      web_app "001-" + host do
+      web_app "002-" + host do
         template "host.conf.erb"
         server_name host + "." + node['base']['domain']
         docroot directory
@@ -59,7 +59,7 @@ Dir.foreach("/var/www") do |host|
       subdirectories.each { |directory|
 
         if Dir.exist?(directory)
-          web_app "000-" + subhost + "." + host do
+          web_app "001-" + subhost + "." + host do
             template "host.conf.erb"
             server_name subhost + "." + host + "." + node['base']['domain']
             docroot directory
