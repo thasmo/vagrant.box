@@ -18,7 +18,7 @@ Vagrant.configure('2') do |config|
   config.vm.box = settings['guest']['architecture'] == '64-bit' ? 'raring64' : 'raring32'
 
   # General
-  config.vm.hostname = 'vagrant'
+  config.vm.hostname = settings['guest']['hostname']
 
   # SSH
   config.ssh.forward_agent = true

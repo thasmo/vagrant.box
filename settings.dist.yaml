@@ -18,6 +18,7 @@ guest:
   architecture: '32-bit'
   memory: 1024
   cpus: 1
+  hostname: 'vagrant'
 
 # Webserver
 webserver:
