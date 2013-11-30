@@ -24,9 +24,9 @@ Vagrant.configure('2') do |config|
   config.ssh.forward_agent = true
 
   # Network Setup
-  config.vm.network :forwarded_port, guest: 80, host: 80
-  config.vm.network :forwarded_port, guest: 443, host: 443
-  config.vm.network :forwarded_port, guest: 3306, host: 3306
+  settings['vagrant']['ports'].each do |host_port, guest_port|
+    config.vm.network :forwarded_port, guest: guest_port, host: host_port
+  end
 
   # Synced Folders
   config.vm.synced_folder '.', '/vagrant', disabled: true

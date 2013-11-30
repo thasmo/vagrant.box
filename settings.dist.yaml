@@ -7,6 +7,10 @@ vagrant:
     log:
       path: '/var/log/apache2'
       nfs: true
+  ports:
+    80: 80
+    443: 443
+    3306: 3306
 
 # Guest
 guest:
