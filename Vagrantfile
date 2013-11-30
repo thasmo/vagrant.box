@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "raring64"
 
   # General
-  config.vm.hostname = "vagrant"
+  config.vm.hostname = "box"
 
   # SSH
   config.ssh.forward_agent = true
@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   # VirtualBox Configuration
   config.vm.provider :virtualbox do |provider, config|
     provider.gui = false
-    provider.name = "Development"
+    provider.name = "Box"
     provider.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
     provider.customize ["modifyvm", :id, "--memory", "1024"]
     provider.customize ["modifyvm", :id, "--acpi", "on"]
@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
   # VMware Workstation Configuration
   config.vm.provider :vmware_workstation do |provider, config|
     provider.gui = false
-    provider.vmx["displayName"] = "Development"
+    provider.vmx["displayName"] = "Box"
     provider.vmx["guestOS"] = "ubuntu-64"
     provider.vmx["numvcpus"] = "2"
     provider.vmx["memsize"] = "1024"
@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
   # VMware Fusion Configuration
   config.vm.provider :vmware_fusion do |provider, override|
     provider.gui = false
-    provider.vmx["displayName"] = "Development"
+    provider.vmx["displayName"] = "Box"
     provider.vmx["guestOS"] = "ubuntu-64"
     provider.vmx["numvcpus"] = "2"
     provider.vmx["memsize"] = "1024"
