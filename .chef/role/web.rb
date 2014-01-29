@@ -35,7 +35,7 @@ run_list(
 
   # Base
   "recipe[base::configuration]",
-  "recipe[base::module_igbinary]",
+  #"recipe[base::module_igbinary]",
   "recipe[base::mod_vhost_alias]",
   "recipe[base::mod_actions]",
   "recipe[base::hosts]",
