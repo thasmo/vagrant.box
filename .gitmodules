@@ -18,7 +18,7 @@
 	url = https://github.com/opscode-cookbooks/imagemagick.git
 [submodule ".chef/cookbook/generic/mysql"]
 	path = .chef/cookbook/generic/mysql
-	url = https://github.com/thasmo/mysql.git
+	url = https://github.com/opscode-cookbooks/mysql.git
 [submodule ".chef/cookbook/generic/apache2"]
 	path = .chef/cookbook/generic/apache2
 	url = https://github.com/opscode-cookbooks/apache2.git
@@ -43,9 +43,6 @@
 [submodule ".chef/cookbook/generic/xml"]
 	path = .chef/cookbook/generic/xml
 	url = https://github.com/opscode-cookbooks/xml.git
-[submodule ".chef/cookbook/generic/git"]
-	path = .chef/cookbook/generic/git
-	url = https://github.com/opscode-cookbooks/git.git
 [submodule ".chef/cookbook/generic/dmg"]
 	path = .chef/cookbook/generic/dmg
 	url = https://github.com/opscode-cookbooks/dmg.git
@@ -55,12 +52,12 @@
 [submodule ".chef/cookbook/generic/chef_handler"]
 	path = .chef/cookbook/generic/chef_handler
 	url = https://github.com/opscode-cookbooks/chef_handler.git
-[submodule ".chef/cookbook/generic/zsh"]
-	path = .chef/cookbook/generic/zsh
-	url = https://github.com/opscode-cookbooks/zsh.git
 [submodule ".chef/cookbook/generic/logrotate"]
 	path = .chef/cookbook/generic/logrotate
 	url = https://github.com/opscode-cookbooks/logrotate.git
-[submodule ".chef/cookbook/generic/nodejs"]
-	path = .chef/cookbook/generic/nodejs
-	url = https://github.com/mdxp/nodejs-cookbook.git
+[submodule ".chef/cookbook/generic/yum-epel"]
+	path = .chef/cookbook/generic/yum-epel
+	url = https://github.com/opscode-cookbooks/yum-epel.git
+[submodule ".chef/cookbook/generic/iis"]
+	path = .chef/cookbook/generic/iis
+	url = https://github.com/opscode-cookbooks/iis.git

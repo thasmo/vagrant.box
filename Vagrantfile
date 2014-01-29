@@ -11,6 +11,9 @@ else
   abort('No settings.yaml file found.')
 end
 
+# Vagrant version
+Vagrant.require_version '>= 1.4.0', '< 1.5.0'
+
 # Vagrant Configuration
 Vagrant.configure('2') do |config|
 
