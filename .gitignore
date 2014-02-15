@@ -5,9 +5,12 @@ Thumbs.db
 # Project specific
 /settings.yaml
 *.lock
+!Cheffile.lock
 
 # Common
 /*/
 !/.chef
+/.chef/cookbook/generic
+!/.librarian/
 !/host
 !/log
