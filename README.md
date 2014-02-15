@@ -12,22 +12,19 @@ Work in progress.
 * Image Magick
 * Locale
 * MySQL
-* node.js
 * PHP 5.4 FPM
-* Phing
-* Composer
 * SQLite
-* ZSH
 * Zip
 
 ## Prerequisites
 * Vagrant
 * Ubuntu 13.04 64bit base-box named "raring64"
 * VirtualBox or VMWare Workstation/Fusion
+* Librarian Chef
 
 ## Installation
 * Clone the repository
-* Initialize and update submodules
+* Run `librarian-chef install` to install cookbooks
 
 ## Usage
 
