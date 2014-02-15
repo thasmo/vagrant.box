@@ -1,9 +1,9 @@
-name "email"
-description "Sets up an email server"
+name 'email'
+description 'Sets up an email server'
 
 # Runlist
 run_list(
 
   # Dovecot + Postfix
-  "recipe[base::mail]",
+  'recipe[base::mail]',
 )

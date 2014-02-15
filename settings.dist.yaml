@@ -23,3 +23,5 @@ guest:
 # Webserver
 webserver:
   domain: 'local'
+  environment:
+    ENVIRONMENT: 'development'

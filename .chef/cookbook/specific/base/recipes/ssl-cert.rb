@@ -1,3 +1,3 @@
-package "ssl-cert" do
+package 'ssl-cert' do
   action :install
 end

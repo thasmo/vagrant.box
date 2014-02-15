@@ -92,7 +92,8 @@ Vagrant.configure('2') do |config|
     # Attributes
     chef.json = {
       'base' => {
-        'domain' => settings['webserver']['domain']
+        'domain' => settings['webserver']['domain'],
+        'environment' => settings['webserver']['environment']
       }
     }
   end

@@ -1,3 +1,3 @@
-package "zip" do
+package 'zip' do
   action :install
 end
