@@ -1,8 +1,11 @@
 # Vagrant
 vagrant:
   folders:
+    dev:
+      path: '/var/www/dev'
+      nfs: true
     host:
-      path: '/var/www'
+      path: '/var/www/host'
       nfs: true
     log:
       path: '/var/log/apache2'
