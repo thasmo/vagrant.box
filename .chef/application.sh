@@ -1,14 +1,13 @@
 #!/bin/sh
 
-# start initialization once
-if [ ! -f /home/vagrant/application ]; then
-
-  # PhpMyAdmin
+# PhpMyAdmin
+if [ ! -f /var/www/dev/pma/install.lock ]; then
   sudo sh /var/www/dev/pma/install.sh
+  touch /var/www/dev/pma/install.lock
+fi
 
-  # Roundcube
+# Roundcube
+if [ ! -f /var/www/dev/mail/install.lock ]; then
   sudo sh /var/www/dev/mail/install.sh
-
-  # finish initialization
-  touch /home/vagrant/application
+  touch /var/www/dev/mail/install.lock
 fi
