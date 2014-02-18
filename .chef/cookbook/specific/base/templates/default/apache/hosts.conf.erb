@@ -1,0 +1,42 @@
+DocumentRoot /var/www/
+UseCanonicalName Off
+
+<Directory /var/www/>
+	AllowOverride All
+</Directory>
+
+# local configuration
+<VirtualHost *:80>
+	ServerName <%= @domain %>
+	ServerAlias *.<%= @domain %>
+	VirtualDocumentRoot "/var/www/%-2+/htdocs/"
+	VirtualScriptAlias "/var/www/%-2+/htdocs/"
+</VirtualHost>
+
+<VirtualHost *:443>
+	ServerName <%= @domain %>
+	ServerAlias *.<%= @domain %>
+	VirtualDocumentRoot "/var/www/%-2+/htdocs/"
+	VirtualScriptAlias "/var/www/%-2+/htdocs/"
+
+	SSLEngine On
+	SSLCertificateFile "/etc/ssl/certs/ssl-cert-snakeoil.pem"
+	SSLCertificateKeyFile "/etc/ssl/private/ssl-cert-snakeoil.key"
+</VirtualHost>
+
+# xip.io configuration
+<VirtualHost *:80>
+	ServerAlias *.*.*.*.*.xip.io
+	VirtualDocumentRoot "/var/www/%-7+/htdocs/"
+	VirtualScriptAlias "/var/www/%-7+/htdocs/"
+</VirtualHost>
+
+<VirtualHost *:443>
+	ServerAlias *.*.*.*.*.xip.io
+	VirtualDocumentRoot "/var/www/%-7+/htdocs/"
+	VirtualScriptAlias "/var/www/%-7+/htdocs/"
+
+	SSLEngine On
+	SSLCertificateFile "/etc/ssl/certs/ssl-cert-snakeoil.pem"
+	SSLCertificateKeyFile "/etc/ssl/private/ssl-cert-snakeoil.key"
+</VirtualHost>

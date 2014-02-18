@@ -34,7 +34,6 @@ run_list(
 
   # Base
   'recipe[base::apache]',
-  'recipe[base::apache_hosts]',
   'recipe[base::php]',
 )
 

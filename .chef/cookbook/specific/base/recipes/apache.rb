@@ -25,6 +25,14 @@ template node['apache']['dir'] + '/conf.d/environment.conf' do
   variables :variables => node['base']['environment']
 end
 
+template node['apache']['dir'] + '/conf.d/hosts.conf' do
+  source 'apache/hosts.conf.erb'
+  mode 00644
+  owner 'root'
+  group node['apache']['root_group']
+  variables :domain => node['base']['domain']
+end
+
 template node['apache']['dir'] + '/conf.d/php.conf' do
   source 'apache/php.conf.erb'
   mode 00644
