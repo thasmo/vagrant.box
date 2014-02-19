@@ -12,5 +12,6 @@ Thumbs.db
 !/.chef
 /.chef/cookbook/generic
 !/.librarian/
+!/dev
 !/host
 !/log
