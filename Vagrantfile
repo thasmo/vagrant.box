@@ -5,8 +5,10 @@
 require 'yaml'
 
 # Settings
-if File.exists?('settings.yaml')
-  settings = YAML.load_file('settings.yaml')
+file = File.expand_path('settings.yaml', File.dirname(__FILE__))
+
+if File.exists?(file)
+  settings = YAML.load_file(file)
 else
   abort('No settings.yaml file found.')
 end
