@@ -3,13 +3,10 @@ vagrant:
   folders:
     dev:
       path: '/var/www/dev'
-      nfs: true
     host:
       path: '/var/www/host'
-      nfs: true
     log:
       path: '/var/log/apache2'
-      nfs: true
   ports:
     80: 80
     443: 443

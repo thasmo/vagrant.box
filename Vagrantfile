@@ -36,7 +36,7 @@ Vagrant.configure('2') do |config|
   # Synced Folders
   config.vm.synced_folder '.', '/vagrant', disabled: true
   settings['vagrant']['folders'].each do |name, folder|
-    config.vm.synced_folder name, folder['path'], :nfs => folder['nfs']
+    config.vm.synced_folder name, folder['path']
   end
 
   # VirtualBox Configuration
