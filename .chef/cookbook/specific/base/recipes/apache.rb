@@ -17,6 +17,13 @@ execute 'remove-all-available-sites' do
   command 'sudo rm -f /etc/apache2/sites-available/*'
 end
 
+template node['apache']['dir'] + '/conf.d/custom.conf' do
+  source 'apache/custom.conf.erb'
+  mode 00644
+  owner 'root'
+  group node['apache']['root_group']
+end
+
 template node['apache']['dir'] + '/conf.d/environment.conf' do
   source 'apache/environment.conf.erb'
   mode 00644
