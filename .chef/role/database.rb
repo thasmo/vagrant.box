@@ -11,13 +11,8 @@ run_list(
 # Attributes
 override_attributes(
   'mysql' => {
-    'server_root_password' => '',
-    'server_repl_password' => '',
+    'server_root_password'   => '',
     'server_debian_password' => '',
-    'bind_address' => '0.0.0.0',
-    'allow_remote_root' => true,
-    'tunable' => {
-      'skip-name-resolve' => true,
-    }
+    'allow_remote_root'      => true
   }
 )
