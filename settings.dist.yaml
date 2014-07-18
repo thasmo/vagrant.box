@@ -1,8 +1,6 @@
 # Vagrant
 vagrant:
   folders:
-    dev:
-      path: '/var/www/dev'
     host:
       path: '/var/www/host'
   ports:
