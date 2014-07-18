@@ -1,6 +1,7 @@
 # OS specific
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Project specific
 /settings.yaml
