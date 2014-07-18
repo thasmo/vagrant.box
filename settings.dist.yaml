@@ -5,8 +5,6 @@ vagrant:
       path: '/var/www/dev'
     host:
       path: '/var/www/host'
-    log:
-      path: '/var/log/apache2'
   ports:
     80: 80
     443: 443
