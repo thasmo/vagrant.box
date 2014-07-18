@@ -99,7 +99,4 @@ Vagrant.configure('2') do |config|
       }
     }
   end
-
-  # Application Provisioning
-  config.vm.provision :shell, :path => '.chef/application.sh'
 end
