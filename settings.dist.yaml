@@ -22,4 +22,4 @@ guest:
 webserver:
   domain: 'local'
   environment:
-    ENVIRONMENT: 'development'
+    CONTEXT: 'development'
