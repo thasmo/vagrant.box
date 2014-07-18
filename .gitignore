@@ -1,17 +1,14 @@
-# OS specific
+# OS
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Project specific
-/settings.yaml
-*.lock
+# Development
+.idea/
 
-# Common
-/*/
-!/.chef
-/.chef/cookbook/generic
-!/.librarian/
-!/dev
-!/host
-!/log
+# Project
+.vagrant/
+/tmp/
+/.chef/cookbook/generic/
+*.lock
+/settings.yaml
