@@ -5,7 +5,6 @@ Thumbs.db
 # Project specific
 /settings.yaml
 *.lock
-!Cheffile.lock
 
 # Common
 /*/
