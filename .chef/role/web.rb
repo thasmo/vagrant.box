@@ -11,26 +11,15 @@ run_list(
 
   # Apache
   'recipe[apache2]',
-  'recipe[apache2::mod_fastcgi]',
-  'recipe[apache2::mod_rewrite]',
-  'recipe[apache2::mod_deflate]',
-  'recipe[apache2::mod_expires]',
-  'recipe[apache2::mod_headers]',
-  'recipe[apache2::mod_env]',
-  'recipe[apache2::mod_setenvif]',
-  'recipe[apache2::mod_alias]',
-  'recipe[apache2::mod_auth_basic]',
-  'recipe[apache2::mod_dir]',
-  'recipe[apache2::mod_ssl]',
 
   # PHP
   'recipe[php]',
-  'recipe[php::module_apc]',
   'recipe[php::module_memcache]',
   'recipe[php::module_curl]',
   'recipe[php::module_gd]',
   'recipe[php::module_sqlite3]',
   'recipe[php::module_mysql]',
+  'recipe[php::module_ldap]',
 
   # Base
   'recipe[base::apache]',
@@ -40,7 +29,15 @@ run_list(
 # Attributes
 override_attributes(
   'memcached' => {
-    'memory' => 128,
+    'memory' => 256,
+  },
+  'apache' => {
+    'version' => '2.4',
+    'listen_ports' => %w(80 443),
+    'default_modules' => %w(
+      auth_basic authn_core authn_file authz_core authz_groupfile authz_host authz_user
+      alias actions dir env fastcgi mime negotiation rewrite setenvif ssl vhost_alias
+    ),
   },
   'php' => {
     'packages' => ['php5-fpm', 'php5-cli', 'php-pear', 'php5-mcrypt', 'php5-intl'],

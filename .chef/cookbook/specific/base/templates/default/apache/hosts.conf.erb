@@ -1,29 +1,3 @@
-DocumentRoot /var/www/
-UseCanonicalName Off
-
-<Directory /var/www/>
-	AllowOverride All
-</Directory>
-
-# apps configuration
-<VirtualHost *:80>
-	ServerName dev.<%= @domain %>
-	ServerAlias *.dev.<%= @domain %>
-	VirtualDocumentRoot "/var/www/dev/%-3+/htdocs/"
-	VirtualScriptAlias "/var/www/dev/%-3+/htdocs/"
-</VirtualHost>
-
-<VirtualHost *:443>
-	ServerName dev.<%= @domain %>
-	ServerAlias *.dev.<%= @domain %>
-	VirtualDocumentRoot "/var/www/dev/%-3+/htdocs/"
-	VirtualScriptAlias "/var/www/dev/%-3+/htdocs/"
-
-	SSLEngine On
-	SSLCertificateFile "/etc/ssl/certs/ssl-cert-snakeoil.pem"
-	SSLCertificateKeyFile "/etc/ssl/private/ssl-cert-snakeoil.key"
-</VirtualHost>
-
 # local configuration
 <VirtualHost *:80>
 	ServerName <%= @domain %>

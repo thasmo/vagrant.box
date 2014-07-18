@@ -14,13 +14,13 @@ else
 end
 
 # Vagrant version
-Vagrant.require_version '>= 1.5.0', '< 1.6.0'
+Vagrant.require_version '>= 1.6.0'
 
 # Vagrant Configuration
 Vagrant.configure('2') do |config|
 
   # Base Box
-  config.vm.box = settings['guest']['architecture'] == '64-bit' ? 'thasmo/ubuntu-13.04' : 'thasmo/ubuntu-13.04-i386'
+  config.vm.box = settings['guest']['architecture'] == '64-bit' ? 'chef/ubuntu-14.04' : 'chef/ubuntu-14.04-i386'
 
   # General
   config.vm.hostname = settings['guest']['hostname']
@@ -88,7 +88,7 @@ Vagrant.configure('2') do |config|
     # Roles
     chef.add_role('base')
     chef.add_role('web')
-    chef.add_role('email')
+    #chef.add_role('email')
     chef.add_role('database')
 
     # Attributes

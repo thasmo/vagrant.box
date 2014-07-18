@@ -5,26 +5,25 @@ A vagrant box for web development.
 Work in progress.
 
 ## Contents
-* Apache 2.2
+* Apache 2.4
+* PHP 5.5 (FPM)
+* MySQL 5.6
 * Cron
 * Dovecot + Postfix
-* Git
 * Image Magick
 * Locale
-* MySQL
-* PHP 5.4 FPM
 * SQLite
 * Zip
 
 ## Prerequisites
-* Vagrant
-* Ubuntu 13.04 64bit base-box named "raring64"
+* Vagrant >= 1.6.0
 * VirtualBox or VMWare Workstation/Fusion
 * Librarian Chef
 
 ## Installation
 * Clone the repository
 * Run `librarian-chef install` to install cookbooks
+* Run `vagrant up` to run the initial provisioning
 
 ## Usage
 
