@@ -88,7 +88,7 @@ Vagrant.configure('2') do |config|
     # Roles
     chef.add_role('base')
     chef.add_role('web')
-    #chef.add_role('email')
+    chef.add_role('email')
     chef.add_role('database')
 
     # Attributes

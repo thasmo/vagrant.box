@@ -11,6 +11,8 @@ cookbook 'mysql', '5.3.6'
 cookbook 'sqlite', '1.0.0'
 cookbook 'memcached', '1.7.2'
 cookbook 'imagemagick', '0.2.3'
+cookbook 'postfix', '3.4.0'
+cookbook 'dovecot', '1.0.0'
 
 cookbook 'apache2',
   :git => 'https://github.com/onehealth-cookbooks/apache2.git',
