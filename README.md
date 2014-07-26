@@ -41,12 +41,12 @@ Work in progress.
 
 ## Usage
 
-#### Hosts
+### Hosts
 Virtual hosts in the `host` directory will be served by Apache.
 Files inside `host/project/htdocs/` will be accessible via `http://project.local/`,
 where `local` refers to the configured domain in the `settings.yaml` file.
 
-#### E-Mails
+### E-Mails
 All emails sent won't be delivered to their recipients, they will be stored
 in the local `vagrant` user's mailbox which you can easily access via IMAP
 using `vagrant` as password. It'd also be possible to just install a webmail
