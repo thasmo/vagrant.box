@@ -8,6 +8,7 @@ Work in progress.
 * Apache 2.4
 * PHP 5.5 (FPM)
 * MySQL 5.6
+* Memcached
 * Cron
 * Dovecot + Postfix
 * Image Magick
