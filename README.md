@@ -1,5 +1,5 @@
 # Vagrant Box
-A vagrant box for web development.
+A LAMP Vagrant box for web development.
 
 ## Status
 Work in progress.
@@ -23,11 +23,22 @@ Work in progress.
 ## Installation
 * Clone the repository
 * Run `librarian-chef install` to install cookbooks
+* Copy `settings.dist.yaml` to `settings.yaml`
+* Adjust `settings.yaml` to your needs
 * Run `vagrant up` to run the initial provisioning
 
 ## Usage
 
-TBD
+#### Hosts
+Virtual hosts in the `host` directory will be served by Apache.
+Files inside `host/project/htdocs/` will be accessible via `http://project.local/`,
+where `local` refers to the configured domain in the `settings.yaml` file.
+
+#### E-Mails
+All emails sent won't be delivered to their recipients, they will be stored
+in the local `vagrant` user's mailbox which you can easily access via IMAP
+using `vagrant` as password. It'd also be possible to just install a webmail
+client like roundcube and use it to read the emails.
 
 ## Notes
-Only tested on Windows using VirtualBox and VMware Workstation.
+Only tested on Windows using VirtualBox.
