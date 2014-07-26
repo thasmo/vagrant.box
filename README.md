@@ -16,6 +16,17 @@ Work in progress.
 * SQLite
 * Zip
 
+### Apache modules
+`auth_basic`, `authn_core`, `authn_file`, `authz_core`, `authz_groupfile`, `authz_host`, `authz_user`, `alias`,
+`actions`, `dir`, `env`, `fastcgi`, `mime`, `negotiation`, `rewrite`, `setenvif`, `ssl`, `vhost_alias`
+
+### PHP modules
+`core`, `date`, `ereg`, `libxml`, `openssl`, `pcre`, `zlib`, `bcmath`, `bz2`, `calendar`, `ctype`, `dba`, `dom`,
+`hash`, `fileinfo`, `filter`, `ftp`, `gettext`, `SPL`, `iconv`, `mbstring`, `session`, `posix`, `reflection`,
+`standard`, `shmop`, `simplexml`, `soap`, `sockets`, `phar`, `exif`, `sysvmsg`, `sysvsem`, `sysvshm`, `tokenizer`,
+`wddx`, `xml`, `xmlreader`, `xmlwriter`, `zip`, `cgi-fcgi`, `PDO`, `curl`, `gd`, `intl`, `json`, `ldap`, `mcrypt`,
+`memcache`, `mysql`, `mysqli`, `pdo_mysql`, `pdo_sqlite`, `readline`, `sqlite3`, `mhash`, `opcache`
+
 ## Prerequisites
 * Vagrant >= 1.6.0
 * VirtualBox or VMWare Workstation/Fusion
