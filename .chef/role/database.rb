@@ -6,6 +6,7 @@ run_list(
 
   # MySQL Server
   'recipe[mysql::server]',
+  'recipe[base::mysql]'
 )
 
 # Attributes
