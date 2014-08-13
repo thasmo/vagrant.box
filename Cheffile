@@ -2,7 +2,7 @@
 
 site 'http://community.opscode.com/api/v1'
 
-cookbook 'locale', '0.0.2'
+cookbook 'locale', '1.0.2'
 cookbook 'cron', '1.4.0'
 cookbook 'openssl', '2.0.0'
 cookbook 'php', '1.4.6'
