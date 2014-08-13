@@ -39,6 +39,18 @@ Work in progress.
 * Adjust `settings.yaml` to your needs
 * Run `vagrant up` to run the initial provisioning
 
+## Configuration
+
+### PHP
+
+It's possible to define PHP settings per directory using [.user.ini files](http://php.net/manual/en/configuration.file.per-user.php).
+Note that the INI directive `user_ini.cache_ttl` has been lowered to 10 seconds to detect changes faster.
+Defining PHP settings in `.htaccess` files doesn't work because PHP is not running as Apache module.
+
+### MySQL
+
+MySQL has been set up to use the `utf8` charset and `utf8_unicode_ci` collation by default.
+
 ## Usage
 
 ### Hosts
