@@ -8,8 +8,4 @@ desktop.ini
 
 # Project
 .vagrant/
-/host/
-/tmp/
-/.chef/cookbook/generic/
-*.lock
 /settings.yaml
