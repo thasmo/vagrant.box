@@ -13,7 +13,7 @@ else
   abort('No settings.yaml file found.')
 end
 
-# Vagrant version
+# Vagrant Version
 Vagrant.require_version '>= 1.6.0'
 
 # Vagrant Configuration
