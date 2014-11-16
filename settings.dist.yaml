@@ -4,9 +4,10 @@ vagrant:
     host:
       path: '/var/www/host'
   ports:
-    80: 80
-    443: 443
-    3306: 3306
+    80: 80 # HTTP
+    443: 443 # HTTPS
+    3306: 3306 # MySQL
+    6379: 6379 # Redis
 
 # Guest
 guest:
@@ -15,8 +16,6 @@ guest:
   memory: 1024
   cpus: 1
 
-# Webserver
-webserver:
-  domain: 'local'
-  environment:
-    CONTEXT: 'development'
+# Environment
+environment:
+  CONTEXT: 'local'

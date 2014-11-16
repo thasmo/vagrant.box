@@ -35,6 +35,7 @@ Vagrant.configure('2') do |config|
 
   # Synced Folders
   config.vm.synced_folder '.', '/vagrant', disabled: true
+  config.vm.synced_folder 'provision', '/home/vagrant/provision'
   settings['vagrant']['folders'].each do |name, folder|
     config.vm.synced_folder name, folder['path']
   end
@@ -74,29 +75,12 @@ Vagrant.configure('2') do |config|
     provider.vmx['memsize'] = settings['guest']['memory'].to_i
   end
 
-  # Initialization Provisioning
-  config.vm.provision :shell, :path => '.chef/initialization.sh'
+  # Provision
+  config.vm.provision :shell, path: './provision/setup.sh'
+  config.vm.provision :shell, path: './provision/boot.sh', run: 'always'
 
-  # Main Provisioning
-  config.vm.provision :chef_solo do |chef|
-
-    # Configuration
-    chef.cookbooks_path = ['.chef/cookbook/generic/', '.chef/cookbook/specific/']
-    chef.data_bags_path = '.chef/databag/'
-    chef.roles_path = '.chef/role/'
-
-    # Roles
-    chef.add_role('base')
-    chef.add_role('web')
-    chef.add_role('email')
-    chef.add_role('database')
-
-    # Attributes
-    chef.json = {
-      'base' => {
-        'domain' => settings['webserver']['domain'],
-        'environment' => settings['webserver']['environment']
-      }
-    }
+  # Caching
+  if Vagrant.has_plugin?('vagrant-cachier')
+    config.cache.scope = :box
   end
 end
