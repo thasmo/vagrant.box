@@ -10,11 +10,10 @@ vagrant:
 
 # Guest
 guest:
-  name: 'Development'
-  architecture: '32-bit'
+  name: 'Vagrant'
+  hostname: 'vagrant'
   memory: 1024
   cpus: 1
-  hostname: 'vagrant'
 
 # Webserver
 webserver:
