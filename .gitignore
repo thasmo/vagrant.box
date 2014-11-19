@@ -1,11 +1,8 @@
-# OS
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Development
-.idea/
+# Vagrant
+.vagrant/
 
 # Project
-.vagrant/
 /settings.yaml
+/backup/*
+
+!.gitkeep
