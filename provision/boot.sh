@@ -2,7 +2,14 @@
 
 # Update Composer
 if command -v "composer" > /dev/null; then
-  composer self-update
+  echo "Updating Composer ..."
+  composer self-update &> /dev/null
+fi
+
+# Update Node Modules
+if command -v "npm" > /dev/null; then
+  echo "Updating Node Modules ..."
+  npm update -g &> /dev/null
 fi
 
 echo "Ready. Set. Go!"
