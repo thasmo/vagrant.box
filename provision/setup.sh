@@ -35,8 +35,7 @@ fi
 
 # Configure Nginx
 cp /home/vagrant/provision/configuration/nginx/nginx.conf /etc/nginx/nginx.conf
-cp /home/vagrant/provision/configuration/nginx/host/blank.conf /etc/nginx/sites-available/blank
-cp /home/vagrant/provision/configuration/nginx/host/default.conf /etc/nginx/sites-available/default
+cp /home/vagrant/provision/configuration/nginx/host.conf /etc/nginx/sites-available/default
 touch /etc/nginx/environment.conf
 service nginx restart
 
@@ -50,3 +49,8 @@ service php5-fpm restart
 mysql --user="root" --password="" -e "UPDATE mysql.user SET Host='%' WHERE Host='localhost' AND User='root';"
 cp /home/vagrant/provision/configuration/mysql/custom.cnf /etc/mysql/conf.d/custom.cnf
 service mysql restart
+
+# Configure Backup
+cp /home/vagrant/provision/automation/backup.sh /home/vagrant/backup.sh
+chmod +x /home/vagrant/backup.sh
+cp /home/vagrant/provision/automation/cron /etc/cron.d/vagrant

@@ -12,63 +12,54 @@ settings = YAML.load_file(file)
 # Version
 Vagrant.require_version '>= 1.6.0'
 
-# Vagrant Configuration
+# Configuration
 Vagrant.configure('2') do |config|
 
-  # Base Box
+  # Base
   config.vm.box = 'chef/ubuntu-14.10'
-
-  # General
-  config.vm.hostname = settings['guest']['hostname']
+  config.vm.hostname = settings['machine']['hostname']
 
   # SSH
   config.ssh.forward_agent = true
 
-  # Network Setup
-  settings['vagrant']['ports'].each do |host_port, guest_port|
-    config.vm.network :forwarded_port, guest: guest_port, host: host_port
-  end
+  # Ports
+  config.vm.network :forwarded_port, guest: settings['services']['http'], host: 80 if settings['services']['http']
+  config.vm.network :forwarded_port, guest: settings['services']['https'], host: 443 if settings['services']['https']
+  config.vm.network :forwarded_port, guest: settings['services']['mysql'], host: 3306 if settings['services']['mysql']
+  config.vm.network :forwarded_port, guest: settings['services']['redis'], host: 6379 if settings['services']['redis']
 
-  # Synced Folders
+  # Folders
   config.vm.synced_folder '.', '/vagrant', disabled: true
   config.vm.synced_folder 'provision', '/home/vagrant/provision'
-  settings['vagrant']['folders'].each do |name, folder|
-    config.vm.synced_folder name, folder['path']
-  end
+  config.vm.synced_folder 'backup', '/home/vagrant/backup'
+  config.vm.synced_folder settings['hosts']['directory'], '/var/www'
 
-  # VirtualBox Configuration
+  # VirtualBox
   config.vm.provider :virtualbox do |provider, config|
     provider.gui = false
-    provider.name = settings['guest']['name']
+    provider.name = settings['machine']['name']
     provider.customize ['modifyvm', :id, '--ostype', 'Ubuntu_64']
-    provider.customize ['modifyvm', :id, '--memory', settings['guest']['memory'].to_i]
+    provider.customize ['modifyvm', :id, '--memory', settings['machine']['memory'].to_i]
     provider.customize ['modifyvm', :id, '--acpi', 'on']
-    provider.customize ['modifyvm', :id, '--cpus', settings['guest']['cpus'].to_i]
+    provider.customize ['modifyvm', :id, '--cpus', settings['machine']['cpus'].to_i]
     provider.customize ['modifyvm', :id, '--cpuexecutioncap', '100']
     provider.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
     provider.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
 
-    if settings['guest']['cpus'].to_i > 1
+    if settings['machine']['cpus'].to_i > 1
       provider.customize ['modifyvm', :id, '--ioapic', 'on']
     end
   end
 
-  # VMware Workstation Configuration
-  config.vm.provider :vmware_workstation do |provider, config|
-    provider.gui = false
-    provider.vmx['displayName'] = settings['guest']['name']
-    provider.vmx['guestOS'] = 'ubuntu-64'
-    provider.vmx['numvcpus'] = settings['guest']['cpus'].to_i
-    provider.vmx['memsize'] = settings['guest']['memory'].to_i
-  end
-
-  # VMware Fusion Configuration
-  config.vm.provider :vmware_fusion do |provider, config|
-    provider.gui = false
-    provider.vmx['displayName'] = settings['guest']['name']
-    provider.vmx['guestOS'] = 'ubuntu-64'
-    provider.vmx['numvcpus'] = settings['guest']['cpus'].to_i
-    provider.vmx['memsize'] = settings['guest']['memory'].to_i
+  # VMware
+  [:vmware_workstation, :vmware_fusion].each do |provider|
+    config.vm.provider provider do |provider, config|
+      provider.gui = false
+      provider.vmx['displayName'] = settings['machine']['name']
+      provider.vmx['guestOS'] = 'ubuntu-64'
+      provider.vmx['numvcpus'] = settings['machine']['cpus'].to_i
+      provider.vmx['memsize'] = settings['machine']['memory'].to_i
+    end
   end
 
   # Provision

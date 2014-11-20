@@ -12,4 +12,4 @@ if command -v "npm" > /dev/null; then
   npm update -g &> /dev/null
 fi
 
-echo "Ready. Set. Go!"
+echo "“Do or do not. There is no try.” — Yoda"
