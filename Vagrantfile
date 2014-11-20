@@ -6,14 +6,10 @@ require 'yaml'
 
 # Settings
 file = File.expand_path('settings.yaml', File.dirname(__FILE__))
+file = File.expand_path('settings.default.yaml', File.dirname(__FILE__)) if !File.exists?(file)
+settings = YAML.load_file(file)
 
-if File.exists?(file)
-  settings = YAML.load_file(file)
-else
-  abort('No settings.yaml file found.')
-end
-
-# Vagrant Version
+# Version
 Vagrant.require_version '>= 1.6.0'
 
 # Vagrant Configuration
