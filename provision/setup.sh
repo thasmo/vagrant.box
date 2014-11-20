@@ -35,7 +35,8 @@ fi
 
 # Configure Nginx
 cp /home/vagrant/provision/configuration/nginx/nginx.conf /etc/nginx/nginx.conf
-cp /home/vagrant/provision/configuration/nginx/host.conf /etc/nginx/sites-available/default
+cp /home/vagrant/provision/configuration/nginx/mime.types /etc/nginx/mime.types
+cp /home/vagrant/provision/configuration/nginx/host/default.conf /etc/nginx/sites-available/default
 touch /etc/nginx/environment.conf
 service nginx restart
 
