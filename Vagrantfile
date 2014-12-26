@@ -10,7 +10,7 @@ file = File.expand_path('settings.default.yaml', File.dirname(__FILE__)) if !Fil
 settings = YAML.load_file(file)
 
 # Version
-Vagrant.require_version '>= 1.6.0'
+Vagrant.require_version '>= 1.7.0'
 
 # Configuration
 Vagrant.configure('2') do |config|
