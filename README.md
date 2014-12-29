@@ -60,5 +60,22 @@ in the local `vagrant` user's mailbox which you can easily access via IMAP
 using `vagrant` as password. It'd also be possible to just install a webmail
 client like roundcube and use it to read the emails.
 
+## Settings
+- *machine*
+    - *box*: Name of the base box to use. Can be a local box or a box hosted on Atlas.
+    - *name*: Name of the VM, which is displayed in the GUI of the provider. Should be unique per provider.
+    - *hostname*: Defines the hostname of the VM.
+    - *memory*: Amount of RAM in MB the VM will be assigned.
+    - *cpus*: Number of virtual CPU cores the VM will be assigned.
+- *services*
+    - *http*: Local port number to map the HTTP service to.
+    - *https*: Local port number to map the HTTPS service to.
+    - *mysql*: Local port number to map the MySQL server to.
+    - *redis*: Local port number to map the Redis server to.
+- *hosts*
+    - *directory*: Local path of the hosts directory. Can be relative or absolute.
+- *environment*
+    - *variables*: List of environment variables to set for the VM's web-server.
+
 ## Notes
 Only tested on Windows using VMware Workstation 11.
