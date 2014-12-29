@@ -19,9 +19,6 @@ Vagrant.configure('2') do |config|
   config.vm.box = settings['machine']['box']
   config.vm.hostname = settings['machine']['hostname']
 
-  # SSH
-  config.ssh.forward_agent = true
-
   # Ports
   config.vm.network :forwarded_port, guest: 80, host: settings['services']['http'] if settings['services']['http']
   config.vm.network :forwarded_port, guest: 443, host: settings['services']['https'] if settings['services']['https']
@@ -33,6 +30,9 @@ Vagrant.configure('2') do |config|
   config.vm.synced_folder 'provision', '/home/vagrant/provision'
   config.vm.synced_folder 'backup', '/home/vagrant/backup'
   config.vm.synced_folder settings['hosts']['directory'], '/var/www' if settings['hosts']['directory']
+
+  # SSH
+  config.ssh.forward_agent = true
 
   # VirtualBox
   config.vm.provider :virtualbox do |provider, config|
