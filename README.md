@@ -17,11 +17,12 @@ Work in progress.
 * SQLite
 
 ### PHP Modules
-`core`, `date`, `ereg`, `libxml`, `openssl`, `pcre`, `zlib`, `bcmath`, `bz2`, `calendar`, `ctype`, `dba`, `dom`,
-`hash`, `fileinfo`, `filter`, `ftp`, `gettext`, `SPL`, `iconv`, `mbstring`, `session`, `posix`, `reflection`,
-`standard`, `shmop`, `simplexml`, `soap`, `sockets`, `phar`, `exif`, `sysvmsg`, `sysvsem`, `sysvshm`, `tokenizer`,
-`wddx`, `xml`, `xmlreader`, `xmlwriter`, `zip`, `cgi-fcgi`, `PDO`, `curl`, `gd`, `intl`, `json`, `ldap`, `mcrypt`,
-`memcache`, `mysql`, `mysqli`, `pdo_mysql`, `pdo_sqlite`, `readline`, `sqlite3`, `mhash`, `opcache`
+`apc`, `apcu`, `bcmath`, `bz2`, `calendar`, `cgi-fcgi`, `core`, `ctype`, `curl`, `date`, `dba`, `dom`, `ereg`, `exif`,
+`fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `hash`, `iconv`, `imap`, `intl`, `json`, `libxml`, `mbstring`,
+`mcrypt`, `memcached`, `mhash`, `mysql`, `mysqli`, `mysqlnd`, `opcache`, `openssl`, `pcre`, `pdo`, `pdo_mysql`,
+`pdo_sqlite`, `phar`, `posix`, `readline`, `redis`, `reflection`, `session`, `shmop`, `simplexml`, `soap`, `sockets`,
+`spl`, `sqlite3`, `standard`, `sysvmsg`, `sysvsem`, `sysvshm`, `tokenizer`, `wddx`, `xdebug`, `xml`, `xmlreader`,
+`xmlwriter`, `zip`, `zlib`
 
 ### Node Modules (global)
 `gulp`, `grunt-cli`, `bower`
