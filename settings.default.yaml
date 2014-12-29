@@ -19,4 +19,5 @@ hosts:
 
 # Environment
 environment:
-  CONTEXT: 'local'
+  variables:
+    - CONTEXT: 'local'

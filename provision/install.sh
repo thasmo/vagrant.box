@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Provisioning Box ..."
+
 export DEBIAN_FRONTEND=noninteractive
 
 # Update Packages
@@ -17,7 +19,7 @@ apt-get update
 
 # Install Packages
 apt-get install -y \
-build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev make \
+build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev make imagemagick \
 nginx nodejs sqlite3 libsqlite3-dev mysql-server redis-server memcached ssl-cert \
 php5-cli php5-dev php5-mysqlnd php5-sqlite php5-apcu php5-json php5-curl php5-gd \
 php5-gmp php5-imap php5-mcrypt php5-xdebug php5-memcached php5-redis php5-fpm
@@ -52,6 +54,4 @@ cp /home/vagrant/provision/configuration/mysql/custom.cnf /etc/mysql/conf.d/cust
 service mysql restart
 
 # Configure Backup
-cp /home/vagrant/provision/automation/backup.sh /home/vagrant/backup.sh
-chmod +x /home/vagrant/backup.sh
 cp /home/vagrant/provision/automation/cron /etc/cron.d/vagrant

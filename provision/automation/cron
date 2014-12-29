@@ -1,1 +1,2 @@
-0 * * * * root /home/vagrant/backup.sh > /dev/null 2>&1
+0 */1 * * * root /home/vagrant/provision/automation/backup.sh > /dev/null 2>&1
+0 */8 * * * root /home/vagrant/provision/automation/update.sh > /dev/null 2>&1

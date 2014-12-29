@@ -23,16 +23,16 @@ Vagrant.configure('2') do |config|
   config.ssh.forward_agent = true
 
   # Ports
-  config.vm.network :forwarded_port, guest: settings['services']['http'], host: 80 if settings['services']['http']
-  config.vm.network :forwarded_port, guest: settings['services']['https'], host: 443 if settings['services']['https']
-  config.vm.network :forwarded_port, guest: settings['services']['mysql'], host: 3306 if settings['services']['mysql']
-  config.vm.network :forwarded_port, guest: settings['services']['redis'], host: 6379 if settings['services']['redis']
+  config.vm.network :forwarded_port, guest: 80, host: settings['services']['http'] if settings['services']['http']
+  config.vm.network :forwarded_port, guest: 443, host: settings['services']['https'] if settings['services']['https']
+  config.vm.network :forwarded_port, guest: 3306, host: settings['services']['mysql'] if settings['services']['mysql']
+  config.vm.network :forwarded_port, guest: 6379, host: settings['services']['redis'] if settings['services']['redis']
 
   # Folders
   config.vm.synced_folder '.', '/vagrant', disabled: true
   config.vm.synced_folder 'provision', '/home/vagrant/provision'
   config.vm.synced_folder 'backup', '/home/vagrant/backup'
-  config.vm.synced_folder settings['hosts']['directory'], '/var/www'
+  config.vm.synced_folder settings['hosts']['directory'], '/var/www' if settings['hosts']['directory']
 
   # VirtualBox
   config.vm.provider :virtualbox do |provider, config|
@@ -63,11 +63,9 @@ Vagrant.configure('2') do |config|
   end
 
   # Provision
-  config.vm.provision :shell, path: './provision/setup.sh'
-  config.vm.provision :shell, path: './provision/boot.sh', run: 'always'
-
-  # Caching
-  if Vagrant.has_plugin?('vagrant-cachier')
-    config.cache.scope = :box
-  end
+  config.vm.provision :shell, inline: 'bash /home/vagrant/provision/install.sh'
+  config.vm.provision :shell,
+    inline: 'bash /home/vagrant/provision/configure.sh "$1" "$2"',
+    args: ['environment', (settings['environment']['variables'].map{|i| i.map{|k,v| "#{k}=#{v}"}}.join(' '))],
+    run: 'always'
 end
