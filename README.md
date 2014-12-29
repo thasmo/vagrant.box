@@ -78,4 +78,4 @@ client like roundcube and use it to read the emails.
     - *variables*: List of environment variables to set for the VM's web-server.
 
 ## Notes
-Only tested on Windows using VMware Workstation 11.
+Only tested on Windows 8.1 using VMware Workstation 11.
