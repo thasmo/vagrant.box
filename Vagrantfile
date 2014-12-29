@@ -62,6 +62,15 @@ Vagrant.configure('2') do |config|
     end
   end
 
+  # Parallels
+  config.vm.provider :parallels do |provider, config|
+    provider.gui = false
+    provider.name = settings['machine']['name']
+    provider.cpus = settings['machine']['cpus'].to_i
+    provider.memory = settings['machine']['memory'].to_i
+    provider.optimize_power_consumption = false
+  end
+
   # Provision
   config.vm.provision :shell, inline: 'bash /home/vagrant/provision/install.sh'
   config.vm.provision :shell,

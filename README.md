@@ -29,7 +29,7 @@ Work in progress.
 
 ## Prerequisites
 * Vagrant >= 1.7.0
-* VirtualBox or VMWare Workstation/Fusion
+* VirtualBox, VMWare Workstation/Fusion or Parallels
 
 ## Installation
 * Clone the repository
