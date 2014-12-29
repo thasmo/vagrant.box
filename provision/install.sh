@@ -19,7 +19,7 @@ apt-get update
 
 # Install Packages
 apt-get install -y \
-build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev make imagemagick \
+build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev make imagemagick postfix dovecot-imapd \
 nginx nodejs sqlite3 libsqlite3-dev mysql-server redis-server memcached ssl-cert \
 php5-cli php5-dev php5-mysqlnd php5-sqlite php5-apcu php5-json php5-curl php5-gd \
 php5-gmp php5-imap php5-mcrypt php5-xdebug php5-memcached php5-redis php5-fpm php5-intl
@@ -52,6 +52,18 @@ service php5-fpm restart
 mysql --user="root" --password="" -e "UPDATE mysql.user SET Host='%' WHERE Host='localhost' AND User='root';"
 cp /home/vagrant/provision/configuration/mysql/custom.cnf /etc/mysql/conf.d/custom.cnf
 service mysql restart
+
+# Configure Postfix
+if ! grep -q -F 'virtual_alias_maps' /etc/postfix/main.cf; then
+  echo "home_mailbox = Maildir/" >> /etc/postfix/main.cf
+  echo "virtual_alias_maps = regexp:/etc/postfix/virtual" >> /etc/postfix/main.cf
+  echo "/.*/ vagrant" > /etc/postfix/virtual
+  service postfix restart
+fi
+
+# Configure Dovecot
+echo "mail_location = maildir:~/Maildir" > /etc/dovecot/conf.d/99-custom.conf
+service dovecot restart
 
 # Configure Backup
 cp /home/vagrant/provision/automation/cron /etc/cron.d/vagrant
