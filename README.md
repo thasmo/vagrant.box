@@ -1,5 +1,5 @@
 # Vagrant Box
-A LEMP Vagrant box for web development.
+A custom Vagrant Box for PHP Web Development.
 
 ## Status
 Work in progress.
