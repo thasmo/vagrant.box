@@ -16,6 +16,8 @@ services:
 # Hosts
 hosts:
   directory: '~'
+  domains:
+    - 'local'
 
 # Environment
 environment:

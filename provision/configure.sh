@@ -24,6 +24,11 @@ case $option in
 
   "hosts")
     echo "Configuring hosts ..."
-    END_DATE=$arg
+
+    contents=$(< /home/vagrant/provision/configuration/nginx/host/default.conf)
+    contents=$(echo $contents | sed -e "s/\$DOMAINS/$2/g")
+    echo "$contents" > /etc/nginx/sites-available/default
+
+    service nginx restart
     ;;
 esac
