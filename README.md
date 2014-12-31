@@ -73,6 +73,7 @@ client like roundcube and use it to read the emails.
     - *mysql*: Local port number to map the MySQL server to.
     - *redis*: Local port number to map the Redis server to.
 - *hosts*
+    - *domains*: List of local top-level-domains.
     - *directory*: Local path of the hosts directory. Can be relative or absolute.
 - *environment*
     - *variables*: List of environment variables to set for the VM's web-server.
