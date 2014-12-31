@@ -54,6 +54,27 @@ except you create a sub-directory called `public`, `htdocs` or `httpdocs` which 
 one of these directories and all outside files won't be publicly accessible. SSL is configured and files will be 
 served from within the same public directory.
 
+### Domains
+Support for various *loopback/tunnel* providers is baked in. Supported are:
+
+- [localtunnel.me]
+- [vagrantshare.com]
+- [ngrok.com]
+- [forwardhq.com]
+- [xip.io]
+
+Valid domains which map to host directories are:
+
+- *project.com*.[settings.hosts.domains]
+- *project.com*.localhost
+- *project.com*.localtunnel.me
+- *project.com*.vagrantshare.com
+- *project.com*.ngrok.com
+- *project.com*.fwd.wf
+- *project.com*.192.168.0.1.xip.io
+
+`project.com` will map to the directory `[settings.hosts.directory]/project.com/(public|htdocs|httpdocs)`.
+
 ### E-Mails
 All emails sent won't be delivered to their recipients, they will be stored
 in the local `vagrant` user's mailbox which you can easily access via IMAP
@@ -80,3 +101,10 @@ client like roundcube and use it to read the emails.
 
 ## Notes
 Only tested on Windows 8.1 using VMware Workstation 11.
+
+[localtunnel.me]: http://localtunnel.me/
+[vagrantshare.com]: http://vagrantshare.com/
+[ngrok.com]: http://ngrok.com/
+[fwd.wf]: https://forwardhq.com/
+[forwardhq.com]: https://forwardhq.com/
+[xip.io]: http://xip.io/
