@@ -15,6 +15,7 @@
 - Raise Vagrant version requirement.
 - Lower PHP opcache revalidation frequency.
 - Improve loading of settings.yaml.
+- Change settings.yaml structure.
 - Improve PHP configuration.
 
 ### Removed
