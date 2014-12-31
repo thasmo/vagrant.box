@@ -99,6 +99,8 @@ client like roundcube and use it to read the emails.
 - *environment*
     - *variables*: List of environment variables to set for the VM's web-server.
 
+Run `vagrant reload` to apply changes made in settings.yaml.
+
 ## Notes
 Only tested on Windows 8.1 using VMware Workstation 11.
 
