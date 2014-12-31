@@ -18,8 +18,6 @@ case $option in
       parts=($(echo $assignment | tr "=" "\n"))
       echo "fastcgi_param ${parts[0]} '${parts[1]}';" >> "/etc/nginx/environment.conf"
     done
-
-    service nginx restart
     ;;
 
   "hosts")
@@ -28,7 +26,11 @@ case $option in
     contents=$(< /vagrant/provision/configuration/nginx/host/default.conf)
     contents=$(echo $contents | sed -e "s/\$DOMAINS/$2/g")
     echo "$contents" > /etc/nginx/sites-available/default
+    ;;
 
+  *)
+    $0 "environment" "$1"
+    $0 "hosts" "$2"
     service nginx restart
     ;;
 esac

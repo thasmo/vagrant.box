@@ -70,14 +70,8 @@ Vagrant.configure('2') do |config|
 
   # Provision
   config.vm.provision :shell, inline: 'bash /vagrant/provision/install.sh'
-
-  config.vm.provision :shell,
-    inline: 'bash /vagrant/provision/configure.sh "$1" "$2"',
-    args: ['environment', (settings['environment']['variables'].map{|i| i.map{|k,v| "#{k}=#{v}"}}.join(' '))],
-    run: 'always'
-
-  config.vm.provision :shell,
-    inline: 'bash /vagrant/provision/configure.sh "$1" "$2"',
-    args: ['hosts', settings['hosts']['domains'].join('|')],
-    run: 'always'
+  config.vm.provision :shell, inline: 'bash /vagrant/provision/configure.sh "$1" "$2"', run: 'always', args: [
+    settings['environment']['variables'].map{|i| i.map{|k,v| "#{k}=#{v}"}}.join(' '),
+    settings['hosts']['domains'].join('|')
+  ]
 end
