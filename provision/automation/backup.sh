@@ -3,4 +3,4 @@
 NOW=$(date +"%Y%m%d%H%M%S")
 
 # MySQL
-mysqldump --all-databases | gzip > /home/vagrant/backup/mysql/$NOW.sql.gz
+mysqldump --all-databases | gzip > /vagrant/backup/mysql/$NOW.sql.gz

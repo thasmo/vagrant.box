@@ -26,9 +26,6 @@ Vagrant.configure('2') do |config|
   config.vm.network :forwarded_port, guest: 6379, host: settings['services']['redis'] if settings['services']['redis']
 
   # Folders
-  config.vm.synced_folder '.', '/vagrant', disabled: true
-  config.vm.synced_folder 'provision', '/home/vagrant/provision'
-  config.vm.synced_folder 'backup', '/home/vagrant/backup'
   config.vm.synced_folder settings['hosts']['directory'], '/var/www' if settings['hosts']['directory']
 
   # SSH
@@ -72,15 +69,15 @@ Vagrant.configure('2') do |config|
   end
 
   # Provision
-  config.vm.provision :shell, inline: 'bash /home/vagrant/provision/install.sh'
+  config.vm.provision :shell, inline: 'bash /vagrant/provision/install.sh'
 
   config.vm.provision :shell,
-    inline: 'bash /home/vagrant/provision/configure.sh "$1" "$2"',
+    inline: 'bash /vagrant/provision/configure.sh "$1" "$2"',
     args: ['environment', (settings['environment']['variables'].map{|i| i.map{|k,v| "#{k}=#{v}"}}.join(' '))],
     run: 'always'
 
   config.vm.provision :shell,
-    inline: 'bash /home/vagrant/provision/configure.sh "$1" "$2"',
+    inline: 'bash /vagrant/provision/configure.sh "$1" "$2"',
     args: ['hosts', settings['hosts']['domains'].join('|')],
     run: 'always'
 end

@@ -25,7 +25,7 @@ case $option in
   "hosts")
     echo "Configuring hosts ..."
 
-    contents=$(< /home/vagrant/provision/configuration/nginx/host/default.conf)
+    contents=$(< /vagrant/provision/configuration/nginx/host/default.conf)
     contents=$(echo $contents | sed -e "s/\$DOMAINS/$2/g")
     echo "$contents" > /etc/nginx/sites-available/default
 

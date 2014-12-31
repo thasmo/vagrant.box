@@ -36,20 +36,20 @@ if ! command -v "composer" > /dev/null; then
 fi
 
 # Configure Nginx
-cp /home/vagrant/provision/configuration/nginx/nginx.conf /etc/nginx/nginx.conf
-cp /home/vagrant/provision/configuration/nginx/mime.types /etc/nginx/mime.types
+cp /vagrant/provision/configuration/nginx/nginx.conf /etc/nginx/nginx.conf
+cp /vagrant/provision/configuration/nginx/mime.types /etc/nginx/mime.types
 touch /etc/nginx/environment.conf
 service nginx restart
 
 # Configure PHP
-cp /home/vagrant/provision/configuration/php/pool.ini /etc/php5/fpm/pool.d/www.conf
-cp /home/vagrant/provision/configuration/php/php-cli.ini /etc/php5/cli/conf.d/99-custom.ini
-cp /home/vagrant/provision/configuration/php/php-fpm.ini /etc/php5/fpm/conf.d/99-custom.ini
+cp /vagrant/provision/configuration/php/pool.ini /etc/php5/fpm/pool.d/www.conf
+cp /vagrant/provision/configuration/php/php-cli.ini /etc/php5/cli/conf.d/99-custom.ini
+cp /vagrant/provision/configuration/php/php-fpm.ini /etc/php5/fpm/conf.d/99-custom.ini
 service php5-fpm restart
 
 # Configure MySQL
 mysql --user="root" --password="" -e "UPDATE mysql.user SET Host='%' WHERE Host='localhost' AND User='root';"
-cp /home/vagrant/provision/configuration/mysql/custom.cnf /etc/mysql/conf.d/custom.cnf
+cp /vagrant/provision/configuration/mysql/custom.cnf /etc/mysql/conf.d/custom.cnf
 service mysql restart
 
 # Configure Postfix
@@ -65,4 +65,4 @@ echo "mail_location = maildir:~/Maildir" > /etc/dovecot/conf.d/99-custom.conf
 service dovecot restart
 
 # Configure Backup
-cp /home/vagrant/provision/automation/cron /etc/cron.d/vagrant
+cp /vagrant/provision/automation/cron /etc/cron.d/vagrant
