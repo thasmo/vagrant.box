@@ -4,6 +4,7 @@
 ### Added
 - Add support for the Parallels provider.
 - Add MySQL backup routine.
+- Add support for DNS loopback/tunnel providers.
 - Make the base box configurable.
 - Add a license.
 - Add a change log.
