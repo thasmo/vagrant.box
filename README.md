@@ -14,7 +14,7 @@ Work in progress.
 * Memcached 1.4
 * Git 2.2
 * Node.js 0.10
-* SQLite
+* SQLite 3.8
 
 ### PHP Modules
 `apc`, `apcu`, `bcmath`, `bz2`, `calendar`, `cgi-fcgi`, `core`, `ctype`, `curl`, `date`, `dba`, `dom`, `ereg`, `exif`,
