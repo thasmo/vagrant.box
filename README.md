@@ -102,6 +102,13 @@ in the local `vagrant` user's mailbox which you can easily access via IMAP
 using `vagrant` as password. It's also be possible to just install a webmail
 client like roundcube and use it to read the emails.
 
+## Plugins
+
+### Triggers
+If installed, the `vagrant-triggers` plugin is used to create database backups,
+before halting, suspending or destroying the VM. If the plugin is not installed
+database backups will still be created every hour.
+
 ## Settings
 - *machine*
     - *box*: Name of the base box to use. Can be a local box or a box hosted on Atlas.

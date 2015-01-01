@@ -74,4 +74,13 @@ Vagrant.configure('2') do |config|
     settings['environment']['variables'].map{|i| i.map{|k,v| "#{k}=#{v}"}}.join(' '),
     settings['hosts']['domains'].join('|')
   ]
+
+  # Triggers
+  if defined? VagrantPlugins::Triggers
+
+    # Backup
+    config.trigger.before [:halt, :suspend, :destroy], :stdout => true do
+      run "vagrant ssh -c '/vagrant/provision/automation/backup.sh'"
+    end
+  end
 end
