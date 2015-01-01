@@ -1,6 +1,15 @@
 # Vagrant Box
 A custom Vagrant Box for PHP Web Development.
 
+## Goals and Principles
+* Convention over Configuration
+* Optimize for Performance
+* Multi-Project Support
+* Latest Software
+* Solid Backup Strategy
+* Comprehensive Documentation
+* Automate everything
+
 ## Status
 Work in progress.
 
