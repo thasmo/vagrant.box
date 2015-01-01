@@ -39,7 +39,6 @@ fi
 # Configure Nginx
 cp /vagrant/provision/configuration/nginx/nginx.conf /etc/nginx/nginx.conf
 cp /vagrant/provision/configuration/nginx/mime.types /etc/nginx/mime.types
-touch /etc/nginx/environment.conf
 service nginx restart
 
 # Configure PHP
