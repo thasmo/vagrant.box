@@ -55,6 +55,20 @@ one of these directories and all outside files won't be publicly accessible. SSL
 served from within the same public directory.
 
 ### Domains
+
+#### Hostname Mapping
+Hostnames will map to directories in a certain way. Nginx will check if the given hostname maps to an existing
+directory or will strip off subdomains as long as a directory matches. This enables having subdomains pointing
+to a single host directory.
+
+Imagine the domain `username.members.project.com.local`. The last part `local` will be ignored. The leading part
+`username.members.project.com` will be used to determine the host directory by looking up if a directory with the
+same name exists or, otherwise, stripping of `username`, then `members` and even `project` to find an existing one.
+
+Furthermore Nginx will check if one of the directories `public`, `htdocs` or `httpdocs` exist inside the determined
+directory and if, will use it as the public directory and map the hostname to it, otherwise not.
+
+#### Loopback Providers
 Support for various *loopback/tunnel* providers is baked in. Supported are:
 
 - [localtunnel.me]
@@ -65,15 +79,13 @@ Support for various *loopback/tunnel* providers is baked in. Supported are:
 
 Valid domains which map to host directories are:
 
-- *project.com*.[settings.hosts.domains]
-- *project.com*.localhost
 - *project.com*.localtunnel.me
 - *project.com*.vagrantshare.com
 - *project.com*.ngrok.com
 - *project.com*.fwd.wf
 - *project.com*.192.168.0.1.xip.io
 
-`project.com` will map to the directory `[settings.hosts.directory]/project.com/(public|htdocs|httpdocs)`.
+`project.com` will map to the directory `[settings.hosts.directory]/project.com/`.
 
 ### E-Mails
 All emails sent won't be delivered to their recipients, they will be stored
