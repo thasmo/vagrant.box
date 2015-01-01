@@ -18,6 +18,7 @@
 - Improve loading of settings.yaml.
 - Change settings.yaml structure.
 - Improve PHP configuration.
+- Upgrade Git to version 2.2.
 
 ### Removed
 - Remove Apache.

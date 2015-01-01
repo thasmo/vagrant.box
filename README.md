@@ -12,7 +12,7 @@ Work in progress.
 * MySQL 5.6
 * Redis 2.8
 * Memcached 1.4
-* Git 2.1
+* Git 2.2
 * Node.js 0.10
 * SQLite
 

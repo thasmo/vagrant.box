@@ -15,6 +15,7 @@ apt-add-repository -y ppa:rwky/redis
 apt-add-repository -y ppa:chris-lea/node.js
 apt-add-repository -y ppa:ondrej/php5-5.6
 apt-add-repository -y ppa:ondrej/mysql-5.6
+add-apt-repository -y ppa:git-core/ppa
 apt-get update
 
 # Install Packages
