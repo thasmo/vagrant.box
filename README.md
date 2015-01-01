@@ -102,6 +102,10 @@ in the local `vagrant` user's mailbox which you can easily access via IMAP
 using `vagrant` as password. It's also be possible to just install a webmail
 client like roundcube and use it to read the emails.
 
+## Backup
+The MySQL databases get dumped every hour into the directory `backup/mysql`.
+[Optionally](#triggers) they'll be dumped on every `halt`, `,suspend`, or `destroy`.
+
 ## Plugins
 
 ### Triggers
