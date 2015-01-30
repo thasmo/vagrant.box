@@ -2,6 +2,9 @@
 
 ## [Next][next]
 
+### Added
+- Configure port mapping for the live-reload server.
+
 ## [0.3.0] - 2015-01-03
 
 ### Added

@@ -24,6 +24,7 @@ Vagrant.configure('2') do |config|
   config.vm.network :forwarded_port, guest: 443, host: settings['services']['https'] if settings['services']['https']
   config.vm.network :forwarded_port, guest: 3306, host: settings['services']['mysql'] if settings['services']['mysql']
   config.vm.network :forwarded_port, guest: 6379, host: settings['services']['redis'] if settings['services']['redis']
+  config.vm.network :forwarded_port, guest: 35729, host: settings['services']['live-reload'] if settings['services']['live-reload']
 
   # Folders
   config.vm.synced_folder settings['hosts']['directory'], '/var/www' if settings['hosts']['directory']
