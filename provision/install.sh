@@ -12,11 +12,12 @@ apt-get upgrade -y
 apt-get install -y software-properties-common
 apt-add-repository -y ppa:nginx/stable
 apt-add-repository -y ppa:rwky/redis
-apt-add-repository -y ppa:chris-lea/node.js
 apt-add-repository -y ppa:ondrej/php5-5.6
 apt-add-repository -y ppa:ondrej/mysql-5.6
 add-apt-repository -y ppa:git-core/ppa
-apt-get update
+
+# Add Node Repository
+wget -O - https://deb.nodesource.com/setup | sudo bash -
 
 # Install Packages
 apt-get install -y \
@@ -26,6 +27,7 @@ php5-cli php5-dev php5-mysqlnd php5-sqlite php5-apcu php5-json php5-curl php5-gd
 php5-gmp php5-imap php5-mcrypt php5-xdebug php5-memcached php5-redis php5-fpm php5-intl
 
 # Install Node Packages
+npm update -g npm
 npm install -g grunt-cli
 npm install -g gulp
 npm install -g bower

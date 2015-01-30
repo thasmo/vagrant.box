@@ -6,6 +6,9 @@
 - Configure port mapping for the live-reload server.
 - Configure port mapping for the browser-sync server.
 
+### Changed
+- Upgrade NPM to the latest version on provisioning.
+
 ## [0.3.0] - 2015-01-03
 
 ### Added
