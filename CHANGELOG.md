@@ -4,6 +4,7 @@
 
 ### Added
 - Configure port mapping for the live-reload server.
+- Configure port mapping for the browser-sync server.
 
 ## [0.3.0] - 2015-01-03
 

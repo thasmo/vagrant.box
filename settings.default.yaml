@@ -13,6 +13,7 @@ services:
   mysql: 3306
   redis: 6379
   live-reload: 35729
+  browser-sync: 3000
 
 # Hosts
 hosts:
