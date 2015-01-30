@@ -23,6 +23,7 @@ Work in progress.
 * Memcached 1.4
 * Git 2.2
 * Node.js 0.10
+* NPM 2.3
 * SQLite 3.8
 
 ### PHP Modules
