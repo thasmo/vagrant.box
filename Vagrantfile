@@ -9,6 +9,12 @@ file = File.expand_path('settings.yaml', File.dirname(__FILE__))
 file = File.expand_path('settings.default.yaml', File.dirname(__FILE__)) if !File.exists?(file)
 settings = YAML.load_file(file)
 
+# Ports
+ports = {
+  'apache' => {:http => 80, :https => 443},
+  'nginx'  => {:http => 88, :https => 444}
+}
+
 # Version
 Vagrant.require_version '>= 1.7.0'
 
@@ -20,15 +26,15 @@ Vagrant.configure('2') do |config|
   config.vm.hostname = settings['machine']['hostname']
 
   # Ports
-  config.vm.network :forwarded_port, guest: 80, host: settings['services']['http'] if settings['services']['http']
-  config.vm.network :forwarded_port, guest: 443, host: settings['services']['https'] if settings['services']['https']
+  config.vm.network :forwarded_port, guest: ports[settings['webserver']['engine']][:http], host: settings['services']['http'] if settings['services']['http']
+  config.vm.network :forwarded_port, guest: ports[settings['webserver']['engine']][:https], host: settings['services']['https'] if settings['services']['https']
   config.vm.network :forwarded_port, guest: 3306, host: settings['services']['mysql'] if settings['services']['mysql']
   config.vm.network :forwarded_port, guest: 6379, host: settings['services']['redis'] if settings['services']['redis']
   config.vm.network :forwarded_port, guest: 35729, host: settings['services']['live-reload'] if settings['services']['live-reload']
   config.vm.network :forwarded_port, guest: 3000, host: settings['services']['browser-sync'] if settings['services']['browser-sync']
 
   # Folders
-  config.vm.synced_folder settings['hosts']['directory'], '/var/www' if settings['hosts']['directory']
+  config.vm.synced_folder settings['webserver']['directory'], '/var/www' if settings['webserver']['directory']
 
   # SSH
   config.ssh.forward_agent = true
@@ -74,7 +80,7 @@ Vagrant.configure('2') do |config|
   config.vm.provision :shell, inline: 'bash /vagrant/provision/install.sh'
   config.vm.provision :shell, inline: 'bash /vagrant/provision/configure.sh "$1" "$2"', run: 'always', args: [
     settings['environment']['variables'].map{|i| i.map{|k,v| "#{k}=#{v}"}}.join(' '),
-    settings['hosts']['domains'].join('|')
+    settings['webserver']['domains'].join('|')
   ]
 
   # Triggers

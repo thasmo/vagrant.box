@@ -16,7 +16,8 @@ services:
   browser-sync: 3000
 
 # Hosts
-hosts:
+webserver:
+  engine: 'apache'
   directory: '~'
   domains:
     - 'local'

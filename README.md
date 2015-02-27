@@ -15,6 +15,7 @@ Work in progress.
 
 ## Software
 * Ubuntu 14.10 64-bit
+* Apache 2.4
 * Nginx 1.6
 * PHP 5.6 (FPM)
 * Composer
@@ -25,6 +26,11 @@ Work in progress.
 * Node.js 0.10
 * NPM 2.3
 * SQLite 3.8
+
+### Apache Modules
+`access_compat`, `actions`, `alias`, `auth_basic`, `authn_core`, `authn_file`, `authz_core`, `authz_groupfile`,
+`authz_host`, `authz_user`, `autoindex`, `deflate`, `dir`, `env`, `filter`, `mime`, `mpm_event`, `negotiation`,
+`proxy`, `proxy_fcgi`, `rewrite`, `setenvif`, `socache_shmcb`, `ssl`, `status`, `vhost_alias`
 
 ### PHP Modules
 `apc`, `apcu`, `bcmath`, `bz2`, `calendar`, `cgi-fcgi`, `core`, `ctype`, `curl`, `date`, `dba`, `dom`, `ereg`, `exif`,
@@ -126,7 +132,8 @@ database backups will still be created every hour.
     - *https*: Local port number to map the HTTPS service to.
     - *mysql*: Local port number to map the MySQL server to.
     - *redis*: Local port number to map the Redis server to.
-- *hosts*
+- *webserver*
+    - *engine*: `apache` or `nginx` available.
     - *domains*: List of local top-level-domains.
     - *directory*: Local path of the hosts directory. Can be relative or absolute.
 - *environment*

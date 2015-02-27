@@ -3,10 +3,12 @@
 ## [Next][next]
 
 ### Added
+- Add Apache 2.4 as alternative webserver.
 - Configure port mapping for the live-reload server.
 - Configure port mapping for the browser-sync server.
 
 ### Changed
+- Rename `hosts` option to `webserver`.
 - Upgrade NPM to the latest version on provisioning.
 
 ## [0.3.0] - 2015-01-03
