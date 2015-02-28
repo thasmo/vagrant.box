@@ -4,5 +4,7 @@
 # Project
 /settings.yaml
 /backup/*
+/host/apache/**
+/host/nginx/**
 
 !.gitkeep
