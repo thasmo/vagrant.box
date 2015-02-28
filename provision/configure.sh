@@ -62,7 +62,7 @@ case $option in
     $0 "hosts" "$2"
     $0 "timezone" "$3"
 
-    echo "Restarting services..."
+    echo "Restarting services ..."
 
     service nginx restart &> /dev/null
     service apache2 restart &> /dev/null
