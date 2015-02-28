@@ -43,6 +43,7 @@ fi
 cp /vagrant/provision/configuration/apache/apache2.conf /etc/apache2/apache2.conf
 cp /vagrant/provision/configuration/apache/ports.conf /etc/apache2/ports.conf
 a2dissite default-ssl
+a2dissite 000-default
 a2enmod actions
 a2enmod fastcgi
 a2enmod proxy
@@ -55,6 +56,7 @@ service apache2 restart
 # Configure Nginx
 cp /vagrant/provision/configuration/nginx/nginx.conf /etc/nginx/nginx.conf
 cp /vagrant/provision/configuration/nginx/mime.types /etc/nginx/mime.types
+rm /etc/nginx/sites-enabled/default
 service nginx restart
 
 # Configure PHP

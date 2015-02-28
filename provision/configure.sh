@@ -29,12 +29,12 @@ case $option in
     # Apache
     contents=$(< /vagrant/provision/configuration/apache/host/default.conf)
     contents=$(echo "$contents" | sed -e "s/\$DOMAINS/$2/g")
-    echo "$contents" > /etc/apache2/sites-available/000-default.conf
+    echo "$contents" > /etc/apache2/hosts.conf
 
     # Nginx
     contents=$(< /vagrant/provision/configuration/nginx/host/default.conf)
     contents=$(echo "$contents" | sed -e "s/\$DOMAINS/$2/g")
-    echo "$contents" > /etc/nginx/sites-available/default
+    echo "$contents" > /etc/nginx/hosts.conf
 
     ;;
 

@@ -6,6 +6,7 @@
 - Add Apache 2.4 as alternative webserver.
 - Configure port mapping for the live-reload server.
 - Configure port mapping for the browser-sync server.
+- Configure shared folders for hosts configuration.
 
 ### Changed
 - Rename `hosts` option to `webserver`.
