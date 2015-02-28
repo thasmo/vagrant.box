@@ -22,9 +22,9 @@ Work in progress.
 * MySQL 5.6
 * Redis 2.8
 * Memcached 1.4
-* Git 2.2
+* Git 2.x
 * Node.js 0.10
-* NPM 2.3
+* NPM 2.x
 * SQLite 3.8
 
 ### Apache Modules
