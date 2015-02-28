@@ -32,12 +32,15 @@ Vagrant.configure('2') do |config|
   config.vm.network :forwarded_port, guest: 6379, host: settings['services']['redis'] if settings['services']['redis']
   config.vm.network :forwarded_port, guest: 35729, host: settings['services']['live-reload'] if settings['services']['live-reload']
   config.vm.network :forwarded_port, guest: 3000, host: settings['services']['browser-sync'] if settings['services']['browser-sync']
+  settings['mappings']['ports'].to_a.each do |host, guest|
+    config.vm.network :forwarded_port, guest: guest, host: host
+  end
 
   # Folders
   config.vm.synced_folder settings['webserver']['directory'], '/var/www' if settings['webserver']['directory']
   config.vm.synced_folder './host/apache/', '/etc/apache2/sites-enabled/'
   config.vm.synced_folder './host/nginx/', '/etc/nginx/sites-enabled/'
-  settings['folders'].to_a.each do |path, folder|
+  settings['mappings']['folders'].to_a.each do |path, folder|
     config.vm.synced_folder path, folder['path']
   end
 

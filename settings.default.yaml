@@ -28,5 +28,7 @@ environment:
   variables:
     - CONTEXT: 'local'
 
-# Folders
-folders:
+# Mappings
+mappings:
+  folders:
+  ports:

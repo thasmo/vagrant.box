@@ -8,6 +8,7 @@
 - Configure port mapping for the browser-sync server.
 - Configure shared folders for hosts configuration.
 - Configure custom shared folder mappings.
+- Configure custom port forwarding.
 - Configure the server's timezone.
 
 ### Changed
