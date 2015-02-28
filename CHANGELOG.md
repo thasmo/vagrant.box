@@ -10,6 +10,7 @@
 - Configure custom shared folder mappings.
 - Configure custom port forwarding.
 - Configure the server's timezone.
+- Install NTP daemon.
 
 ### Changed
 - Rename `hosts` option to `webserver`.
