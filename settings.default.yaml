@@ -26,3 +26,6 @@ webserver:
 environment:
   variables:
     - CONTEXT: 'local'
+
+# Folders
+folders:

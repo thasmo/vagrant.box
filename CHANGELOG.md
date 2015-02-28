@@ -7,6 +7,7 @@
 - Configure port mapping for the live-reload server.
 - Configure port mapping for the browser-sync server.
 - Configure shared folders for hosts configuration.
+- Configure custom shared folder mappings.
 
 ### Changed
 - Rename `hosts` option to `webserver`.

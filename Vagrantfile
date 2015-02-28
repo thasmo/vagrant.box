@@ -37,6 +37,9 @@ Vagrant.configure('2') do |config|
   config.vm.synced_folder settings['webserver']['directory'], '/var/www' if settings['webserver']['directory']
   config.vm.synced_folder './host/apache/', '/etc/apache2/sites-enabled/'
   config.vm.synced_folder './host/nginx/', '/etc/nginx/sites-enabled/'
+  settings['folders'].to_a.each do |path, folder|
+    config.vm.synced_folder path, folder['path']
+  end
 
   # SSH
   config.ssh.forward_agent = true

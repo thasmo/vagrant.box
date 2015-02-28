@@ -150,6 +150,7 @@ database backups will still be created every hour.
     - *directory*: Local path of the hosts directory. Can be relative or absolute.
 - *environment*
     - *variables*: List of environment variables to set for the VM's web-server.
+- *folders*: List of custom shared folder mappings.
 
 Run `vagrant reload` to apply changes made in settings.yaml.
 
