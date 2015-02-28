@@ -65,14 +65,13 @@ MySQL has been set up to use the `utf8` charset and `utf8_unicode_ci` collation 
 ## Usage
 
 ### Hosts
-Virtual hosts in the `hosts directory` will be served by Nginx. Files inside a host directory are publicly accessible
-except you create a sub-directory called `public`, `htdocs` or `httpdocs` which makes Nginx serve files from within 
-one of these directories and all outside files won't be publicly accessible. SSL is configured and files will be 
-served from within the same public directory.
+Virtual hosts in the `hosts directory` will be served by the configured webserver.
 
-### Domains
+#### Nginx
+Files inside a host directory are publicly accessible except you create a sub-directory called `public`, `htdocs` or
+`httpdocs` which makes Nginx serve files from within one of these directories and all outside files won't be publicly
+accessible. SSL is configured and files will be served from within the same public directory.
 
-#### Hostname Mapping
 Hostnames will map to directories in a certain way. Nginx will check if the given hostname maps to an existing
 directory or will strip off subdomains as long as a directory matches. This enables having subdomains pointing
 to a single host directory.
@@ -83,6 +82,19 @@ same name exists or, otherwise, stripping of `username`, then `members` and even
 
 Furthermore Nginx will check if one of the directories `public`, `htdocs` or `httpdocs` exist inside the determined
 directory and if, will use it as the public directory and map the hostname to it, otherwise not.
+
+#### Apache
+Files will be served publicly for each host from within a subdirectory named `htdocs`. Apache doesn't support
+"on-the-fly" configuration of the final document root directory path like Nginx does. If you need to changed the
+directory name of the document root path, have a look at the next chapter - `custom hosts`.
+
+Nevertheless, Apache still support wildcard subdomains, which means `username.members.project.com.local` will be mapped
+to the host's public directory path `username.members.project.com/htdocs`. Apache does not support determining the
+final document root path by stripping of subdomain parts.
+
+#### Custom Hosts
+Host configuration files stored in `hosts/apache` and `hosts/nginx` will be loaded automatically, depending on which
+webserver you have configured to be used.
 
 #### Loopback Providers
 Support for various *loopback/tunnel* providers is baked in. Supported are:
