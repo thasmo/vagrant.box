@@ -139,6 +139,7 @@ database backups will still be created every hour.
     - *hostname*: Defines the hostname of the VM.
     - *memory*: Amount of RAM in MB the VM will be assigned.
     - *cpus*: Number of virtual CPU cores the VM will be assigned.
+    - *timezone*: Defines the server's timezone.
 - *services*
     - *http*: Local port number to map the HTTP service to.
     - *https*: Local port number to map the HTTPS service to.

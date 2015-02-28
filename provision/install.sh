@@ -61,8 +61,6 @@ service nginx restart
 
 # Configure PHP
 cp /vagrant/provision/configuration/php/pool.ini /etc/php5/fpm/pool.d/www.conf
-cp /vagrant/provision/configuration/php/php-cli.ini /etc/php5/cli/conf.d/99-custom.ini
-cp /vagrant/provision/configuration/php/php-fpm.ini /etc/php5/fpm/conf.d/99-custom.ini
 service php5-fpm restart
 
 # Configure MySQL

@@ -5,6 +5,7 @@ machine:
   hostname: 'vagrant'
   memory: 1024
   cpus: 1
+  timezone: 'UTC'
 
 # Services
 services:

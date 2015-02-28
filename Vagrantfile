@@ -83,9 +83,10 @@ Vagrant.configure('2') do |config|
 
   # Provision
   config.vm.provision :shell, inline: 'bash /vagrant/provision/install.sh'
-  config.vm.provision :shell, inline: 'bash /vagrant/provision/configure.sh "$1" "$2"', run: 'always', args: [
+  config.vm.provision :shell, inline: 'bash /vagrant/provision/configure.sh "$1" "$2" "$3"', run: 'always', args: [
     settings['environment']['variables'].map{|i| i.map{|k,v| "#{k}=#{v}"}}.join(' '),
-    settings['webserver']['domains'].join('|')
+    settings['webserver']['domains'].join('|'),
+    settings['machine']['timezone']
   ]
 
   # Triggers
