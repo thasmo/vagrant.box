@@ -5,6 +5,7 @@ machine:
   hostname: 'vagrant'
   memory: 1024
   cpus: 1
+  timezone: 'UTC'
 
 # Services
 services:
@@ -12,9 +13,12 @@ services:
   https: 443
   mysql: 3306
   redis: 6379
+  live-reload: 35729
+  browser-sync: 3000
 
 # Hosts
-hosts:
+webserver:
+  engine: 'apache'
   directory: '~'
   domains:
     - 'local'
@@ -23,3 +27,8 @@ hosts:
 environment:
   variables:
     - CONTEXT: 'local'
+
+# Mappings
+mappings:
+  folders:
+  ports:

@@ -2,6 +2,22 @@
 
 ## [Next][next]
 
+## [0.4.0] - 2015-02-28
+
+### Added
+- Add Apache 2.4 as alternative webserver.
+- Configure port mapping for the live-reload server.
+- Configure port mapping for the browser-sync server.
+- Configure shared folders for hosts configuration.
+- Configure custom shared folder mappings.
+- Configure custom port forwarding.
+- Configure the server's timezone.
+- Install NTP daemon.
+
+### Changed
+- Rename `hosts` option to `webserver`.
+- Upgrade NPM to the latest version on provisioning.
+
 ## [0.3.0] - 2015-01-03
 
 ### Added
@@ -35,8 +51,9 @@
 
 ## 0.1.0 - 2013-11-11
 
-[next]: https://github.com/thasmo/vagrant.box/compare/v0.3.0...HEAD
-[0.3.0]: https://github.com/thasmo/vagrant.box/compare/v0.2.2...0.3.0
+[next]: https://github.com/thasmo/vagrant.box/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/thasmo/vagrant.box/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/thasmo/vagrant.box/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/thasmo/vagrant.box/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/thasmo/vagrant.box/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/thasmo/vagrant.box/compare/v0.1.0...v0.2.0

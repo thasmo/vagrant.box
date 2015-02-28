@@ -1,2 +1,5 @@
 [mysqld]
+sql_mode =
 bind-address = 0.0.0.0
+character_set_server = utf8
+collation_server = utf8_unicode_ci

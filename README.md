@@ -15,15 +15,22 @@ Work in progress.
 
 ## Software
 * Ubuntu 14.10 64-bit
+* Apache 2.4
 * Nginx 1.6
 * PHP 5.6 (FPM)
 * Composer
 * MySQL 5.6
 * Redis 2.8
 * Memcached 1.4
-* Git 2.2
+* Git 2.x
 * Node.js 0.10
+* NPM 2.x
 * SQLite 3.8
+
+### Apache Modules
+`access_compat`, `actions`, `alias`, `auth_basic`, `authn_core`, `authn_file`, `authz_core`, `authz_groupfile`,
+`authz_host`, `authz_user`, `autoindex`, `deflate`, `dir`, `env`, `filter`, `mime`, `mpm_event`, `negotiation`,
+`proxy`, `proxy_fcgi`, `rewrite`, `setenvif`, `socache_shmcb`, `ssl`, `status`, `vhost_alias`
 
 ### PHP Modules
 `apc`, `apcu`, `bcmath`, `bz2`, `calendar`, `cgi-fcgi`, `core`, `ctype`, `curl`, `date`, `dba`, `dom`, `ereg`, `exif`,
@@ -58,14 +65,13 @@ MySQL has been set up to use the `utf8` charset and `utf8_unicode_ci` collation 
 ## Usage
 
 ### Hosts
-Virtual hosts in the `hosts directory` will be served by Nginx. Files inside a host directory are publicly accessible
-except you create a sub-directory called `public`, `htdocs` or `httpdocs` which makes Nginx serve files from within 
-one of these directories and all outside files won't be publicly accessible. SSL is configured and files will be 
-served from within the same public directory.
+Virtual hosts in the `hosts directory` will be served by the configured webserver.
 
-### Domains
+#### Nginx
+Files inside a host directory are publicly accessible except you create a sub-directory called `public`, `htdocs` or
+`httpdocs` which makes Nginx serve files from within one of these directories and all outside files won't be publicly
+accessible. SSL is configured and files will be served from within the same public directory.
 
-#### Hostname Mapping
 Hostnames will map to directories in a certain way. Nginx will check if the given hostname maps to an existing
 directory or will strip off subdomains as long as a directory matches. This enables having subdomains pointing
 to a single host directory.
@@ -76,6 +82,19 @@ same name exists or, otherwise, stripping of `username`, then `members` and even
 
 Furthermore Nginx will check if one of the directories `public`, `htdocs` or `httpdocs` exist inside the determined
 directory and if, will use it as the public directory and map the hostname to it, otherwise not.
+
+#### Apache
+Files will be served publicly for each host from within a subdirectory named `htdocs`. Apache doesn't support
+"on-the-fly" configuration of the final document root directory path like Nginx does. If you need to changed the
+directory name of the document root path, have a look at the next chapter - `custom hosts`.
+
+Nevertheless, Apache still support wildcard subdomains, which means `username.members.project.com.local` will be mapped
+to the host's public directory path `username.members.project.com/htdocs`. Apache does not support determining the
+final document root path by stripping of subdomain parts.
+
+#### Custom Hosts
+Host configuration files stored in `hosts/apache` and `hosts/nginx` will be loaded automatically, depending on which
+webserver you have configured to be used.
 
 #### Loopback Providers
 Support for various *loopback/tunnel* providers is baked in. Supported are:
@@ -120,16 +139,21 @@ database backups will still be created every hour.
     - *hostname*: Defines the hostname of the VM.
     - *memory*: Amount of RAM in MB the VM will be assigned.
     - *cpus*: Number of virtual CPU cores the VM will be assigned.
+    - *timezone*: Defines the server's timezone.
 - *services*
     - *http*: Local port number to map the HTTP service to.
     - *https*: Local port number to map the HTTPS service to.
     - *mysql*: Local port number to map the MySQL server to.
     - *redis*: Local port number to map the Redis server to.
-- *hosts*
+- *webserver*
+    - *engine*: `apache` or `nginx` available.
     - *domains*: List of local top-level-domains.
     - *directory*: Local path of the hosts directory. Can be relative or absolute.
 - *environment*
     - *variables*: List of environment variables to set for the VM's web-server.
+- *mappings*
+    - *folders*: List of custom synced folders.
+    - *ports*: List of custom forwarded ports.
 
 Run `vagrant reload` to apply changes made in settings.yaml.
 
