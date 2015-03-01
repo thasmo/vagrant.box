@@ -2,6 +2,9 @@
 
 ## [Next][next]
 
+### Fixed
+- Fix nginx server-name regular expression to successfully match xip.io domains.
+
 ## [0.4.0] - 2015-02-28
 
 ### Added
