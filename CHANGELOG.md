@@ -4,6 +4,7 @@
 
 ### Fixed
 - Fix nginx server-name regular expression to successfully match xip.io domains.
+- Create MySQL backup directory and check it in to version control.
 
 ## [0.4.0] - 2015-02-28
 

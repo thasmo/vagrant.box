@@ -3,7 +3,7 @@
 
 # Project
 /settings.yaml
-/backup/*
+/backup/mysql/**
 /host/apache/**
 /host/nginx/**
 
