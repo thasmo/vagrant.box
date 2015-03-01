@@ -2,6 +2,12 @@
 
 ## [Next][next]
 
+## [0.4.1] - 2015-03-02
+
+### Fixed
+- Fix nginx server-name regular expression to successfully match xip.io domains.
+- Create MySQL backup directory and check it in to version control.
+
 ## [0.4.0] - 2015-02-28
 
 ### Added
@@ -51,7 +57,8 @@
 
 ## 0.1.0 - 2013-11-11
 
-[next]: https://github.com/thasmo/vagrant.box/compare/v0.4.0...HEAD
+[next]: https://github.com/thasmo/vagrant.box/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/thasmo/vagrant.box/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/thasmo/vagrant.box/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/thasmo/vagrant.box/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/thasmo/vagrant.box/compare/v0.2.1...v0.2.2
