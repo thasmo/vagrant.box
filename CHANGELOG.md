@@ -2,6 +2,8 @@
 
 ## [Next][next]
 
+## [0.4.2] - 2015-03-02
+
 ### Fixed
 - Allow overriding all Apache directives in .htaccess files.
 - Set proper SQL mode for MySQL.
@@ -61,7 +63,8 @@
 
 ## 0.1.0 - 2013-11-11
 
-[next]: https://github.com/thasmo/vagrant.box/compare/v0.4.1...HEAD
+[next]: https://github.com/thasmo/vagrant.box/compare/v0.4.2...HEAD
+[0.4.2]: https://github.com/thasmo/vagrant.box/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/thasmo/vagrant.box/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/thasmo/vagrant.box/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/thasmo/vagrant.box/compare/v0.2.2...v0.3.0
