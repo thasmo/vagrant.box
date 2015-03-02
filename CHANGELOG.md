@@ -2,6 +2,10 @@
 
 ## [Next][next]
 
+### Fixed
+- Allow overriding all Apache directives in .htaccess files.
+- Set proper SQL mode for MySQL.
+
 ## [0.4.1] - 2015-03-02
 
 ### Fixed
