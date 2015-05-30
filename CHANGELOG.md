@@ -2,6 +2,18 @@
 
 ## [Next][next]
 
+## [0.4.3] - 2015-05-30
+
+### Fixed
+- Fix query-string in Nginx rewrite.
+- Fix server-name regexp for hostname matching in Nginx.
+
+### Changed
+- Disable buffering to enable streaming for Nginx.
+
+### Added
+- Configure basic CORS headers for Nginx.
+
 ## [0.4.2] - 2015-03-02
 
 ### Fixed
@@ -63,7 +75,8 @@
 
 ## 0.1.0 - 2013-11-11
 
-[next]: https://github.com/thasmo/vagrant.box/compare/v0.4.2...HEAD
+[next]: https://github.com/thasmo/vagrant.box/compare/v0.4.3...HEAD
+[0.4.3]: https://github.com/thasmo/vagrant.box/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/thasmo/vagrant.box/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/thasmo/vagrant.box/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/thasmo/vagrant.box/compare/v0.3.0...v0.4.0
