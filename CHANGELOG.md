@@ -2,6 +2,10 @@
 
 ## [Next][next]
 
+### Changed
+- Update base box to Ubuntu 15.04.
+- Only pre-configure OPTIONS request in Nginx.
+
 ## [0.4.3] - 2015-05-30
 
 ### Fixed
