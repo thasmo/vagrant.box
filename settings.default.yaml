@@ -1,6 +1,6 @@
 # Machine
 machine:
-  box: 'chef/ubuntu-15.04'
+  box: 'bento/ubuntu-15.04'
   name: 'Vagrant'
   hostname: 'vagrant'
   memory: 1024
