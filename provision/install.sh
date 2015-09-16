@@ -32,6 +32,7 @@ npm update -g npm
 npm install -g grunt-cli
 npm install -g gulp
 npm install -g bower
+npm install -g yo
 
 # Install Composer
 if ! command -v "composer" > /dev/null; then
