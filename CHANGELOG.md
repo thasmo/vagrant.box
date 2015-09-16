@@ -2,6 +2,9 @@
 
 ## [Next][next]
 
+### Added
+- Add Yeoman node module.
+
 ### Changed
 - Update base box to Ubuntu 15.04.
 - Only pre-configure OPTIONS request in Nginx.
