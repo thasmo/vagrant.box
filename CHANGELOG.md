@@ -8,6 +8,7 @@
 ### Changed
 - Update base box to Ubuntu 15.04.
 - Only pre-configure OPTIONS request in Nginx.
+- Change Redis PPA to chris-lea/redis-server.
 
 ## [0.4.3] - 2015-05-30
 
