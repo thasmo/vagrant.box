@@ -55,6 +55,7 @@ service apache2 restart &> /dev/null
 
 # Configure Nginx
 cp /vagrant/provision/configuration/nginx/nginx.conf /etc/nginx/nginx.conf
+cp /vagrant/provision/configuration/nginx/fastcgi.conf /etc/nginx/fastcgi.conf
 cp /vagrant/provision/configuration/nginx/mime.types /etc/nginx/mime.types
 rm /etc/nginx/sites-enabled/default
 service nginx restart &> /dev/null
