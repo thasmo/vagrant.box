@@ -14,16 +14,16 @@ A custom Vagrant Box for PHP Web Development.
 Work in progress.
 
 ## Software
-* Ubuntu 14.10 64-bit
+* Ubuntu 15.04 64-bit
 * Apache 2.4
-* Nginx 1.6
+* Nginx 1.8
 * PHP 5.6 (FPM)
 * Composer
 * MySQL 5.6
-* Redis 2.8
+* Redis 3.0
 * Memcached 1.4
 * Git 2.x
-* Node.js 0.10
+* Node.js 0.12
 * NPM 2.x
 * SQLite 3.8
 
@@ -41,7 +41,7 @@ Work in progress.
 `xmlwriter`, `zip`, `zlib`
 
 ### Node Modules (global)
-`gulp`, `grunt-cli`, `bower`
+`gulp`, `grunt-cli`, `bower`, `yo`
 
 ## Prerequisites
 * Vagrant >= 1.7.0

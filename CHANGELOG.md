@@ -2,6 +2,21 @@
 
 ## [Next][next]
 
+## [0.5.0] - 2015-09-17
+
+### Added
+- Add Yeoman node module.
+- Add custom fastcgi configuration file for Nginx.
+
+### Changed
+- Update base box to Ubuntu 15.04.
+- Only pre-configure OPTIONS request in Nginx.
+- Change Redis PPA to chris-lea/redis-server.
+- Upgrade to Node.js 0.12.
+
+### Removed
+- Disable backup routine on Box halt/suspend/destroy.
+
 ## [0.4.3] - 2015-05-30
 
 ### Fixed
@@ -75,7 +90,8 @@
 
 ## 0.1.0 - 2013-11-11
 
-[next]: https://github.com/thasmo/vagrant.box/compare/v0.4.3...HEAD
+[next]: https://github.com/thasmo/vagrant.box/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/thasmo/vagrant.box/compare/v0.4.3...v0.5.0
 [0.4.3]: https://github.com/thasmo/vagrant.box/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/thasmo/vagrant.box/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/thasmo/vagrant.box/compare/v0.4.0...v0.4.1

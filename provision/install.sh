@@ -11,14 +11,14 @@ apt-get upgrade -y
 # Add Repositories
 apt-get install -y software-properties-common
 apt-add-repository -y ppa:nginx/stable
-apt-add-repository -y ppa:rwky/redis
+apt-add-repository -y ppa:chris-lea/redis-server
 apt-add-repository -y ppa:ondrej/apache2
 apt-add-repository -y ppa:ondrej/php5-5.6
 apt-add-repository -y ppa:ondrej/mysql-5.6
 add-apt-repository -y ppa:git-core/ppa
 
 # Add Node Repository
-wget -O - https://deb.nodesource.com/setup | sudo bash -
+wget -O - https://deb.nodesource.com/setup_0.12 | sudo bash -
 
 # Install Packages
 apt-get install -y \
@@ -32,6 +32,7 @@ npm update -g npm
 npm install -g grunt-cli
 npm install -g gulp
 npm install -g bower
+npm install -g yo
 
 # Install Composer
 if ! command -v "composer" > /dev/null; then
@@ -54,6 +55,7 @@ service apache2 restart &> /dev/null
 
 # Configure Nginx
 cp /vagrant/provision/configuration/nginx/nginx.conf /etc/nginx/nginx.conf
+cp /vagrant/provision/configuration/nginx/fastcgi.conf /etc/nginx/fastcgi.conf
 cp /vagrant/provision/configuration/nginx/mime.types /etc/nginx/mime.types
 rm /etc/nginx/sites-enabled/default
 service nginx restart &> /dev/null

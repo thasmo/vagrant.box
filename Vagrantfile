@@ -91,13 +91,4 @@ Vagrant.configure('2') do |config|
     settings['webserver']['domains'].join('|'),
     settings['machine']['timezone']
   ]
-
-  # Triggers
-  if defined? VagrantPlugins::Triggers
-
-    # Backup
-    config.trigger.before [:halt, :suspend, :destroy], :stdout => true do
-      run "vagrant ssh -c '/vagrant/provision/automation/backup.sh'"
-    end
-  end
 end
