@@ -11,7 +11,7 @@ apt-get upgrade -y
 # Add Repositories
 apt-get install -y software-properties-common
 apt-add-repository -y ppa:nginx/stable
-apt-add-repository -y ppa:rwky/redis
+apt-add-repository -y ppa:chris-lea/redis-server
 apt-add-repository -y ppa:ondrej/apache2
 apt-add-repository -y ppa:ondrej/php5-5.6
 apt-add-repository -y ppa:ondrej/mysql-5.6
