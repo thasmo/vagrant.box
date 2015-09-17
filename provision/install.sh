@@ -18,7 +18,7 @@ apt-add-repository -y ppa:ondrej/mysql-5.6
 add-apt-repository -y ppa:git-core/ppa
 
 # Add Node Repository
-wget -O - https://deb.nodesource.com/setup | sudo bash -
+wget -O - https://deb.nodesource.com/setup_0.12 | sudo bash -
 
 # Install Packages
 apt-get install -y \
