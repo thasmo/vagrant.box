@@ -23,7 +23,7 @@ Work in progress.
 * Redis 3.0
 * Memcached 1.4
 * Git 2.x
-* Node.js 0.10
+* Node.js 0.12
 * NPM 2.x
 * SQLite 3.8
 
