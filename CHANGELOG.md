@@ -4,11 +4,15 @@
 
 ### Added
 - Add Yeoman node module.
+- Add custom fastcgi configuration file for Nginx.
 
 ### Changed
 - Update base box to Ubuntu 15.04.
 - Only pre-configure OPTIONS request in Nginx.
 - Change Redis PPA to chris-lea/redis-server.
+
+### Removed
+- Disable backup routine on Box halt/suspend/destroy.
 
 ## [0.4.3] - 2015-05-30
 
