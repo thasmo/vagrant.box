@@ -66,7 +66,7 @@ service php5-fpm restart &> /dev/null
 
 # Configure MySQL
 mysql --user="root" --password="" -e "UPDATE mysql.user SET Host='%' WHERE Host='localhost' AND User='root';"
-cp /vagrant/provision/configuration/mysql/custom.cnf /etc/mysql/conf.d/custom.cnf
+cp /vagrant/provision/configuration/mysql/custom.cnf /etc/mysql/mysql.conf.d/z-custom.cnf
 rm /usr/my.cnf
 service mysql restart &> /dev/null
 
