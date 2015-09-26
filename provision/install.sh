@@ -4,10 +4,6 @@ echo "Provisioning Box ..."
 
 export DEBIAN_FRONTEND=noninteractive
 
-# Update Packages
-apt-get update
-apt-get upgrade -y
-
 # Add Repositories
 apt-get install -y software-properties-common
 apt-add-repository -y ppa:nginx/stable
@@ -17,8 +13,12 @@ apt-add-repository -y ppa:ondrej/php5-5.6
 apt-add-repository -y ppa:ondrej/mysql-5.6
 add-apt-repository -y ppa:git-core/ppa
 
-# Add Node Repository
-wget -O - https://deb.nodesource.com/setup_0.12 | sudo bash -
+wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+add-apt-repository https://deb.nodesource.com/node_4.x
+
+# Update Packages
+apt-get update
+apt-get upgrade -y
 
 # Install Packages
 apt-get install -y \
