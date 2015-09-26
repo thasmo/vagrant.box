@@ -23,6 +23,7 @@ Vagrant.configure('2') do |config|
 
   # Base
   config.vm.box = settings['machine']['box']
+  config.vm.box_version = settings['machine']['version']
   config.vm.hostname = settings['machine']['hostname']
 
   # Ports
