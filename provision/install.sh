@@ -28,11 +28,11 @@ php5-cli php5-dev php5-mysqlnd php5-sqlite php5-apcu php5-json php5-curl php5-gd
 php5-gmp php5-imap php5-mcrypt php5-xdebug php5-memcached php5-redis php5-fpm php5-intl
 
 # Install Node Packages
-npm update -g npm
-npm install -g grunt-cli
-npm install -g gulp
-npm install -g bower
-npm install -g yo
+npm update --global npm
+npm install --global --production grunt-cli
+npm install --global --production gulp
+npm install --global --production bower
+npm install --global --production yo
 
 # Install Composer
 if ! command -v "composer" > /dev/null; then
