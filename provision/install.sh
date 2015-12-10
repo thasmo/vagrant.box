@@ -22,7 +22,7 @@ apt-get upgrade -y
 
 # Install Packages
 apt-get install -y \
-build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev make imagemagick postfix dovecot-imapd \
+build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev make graphicsmagick postfix dovecot-imapd \
 apache2 nginx nodejs sqlite3 libsqlite3-dev mysql-server redis-server memcached ssl-cert ntp \
 php5-cli php5-dev php5-mysqlnd php5-sqlite php5-apcu php5-json php5-curl php5-gd \
 php5-gmp php5-imap php5-mcrypt php5-xdebug php5-memcached php5-redis php5-fpm php5-intl
