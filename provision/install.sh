@@ -34,6 +34,7 @@ npm install --global --production gulp
 npm install --global --production bower
 npm install --global --production yo
 npm install --global --production localtunnel
+npm install --global --production browser-sync
 
 # Install Composer
 if ! command -v "composer" > /dev/null; then

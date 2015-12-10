@@ -5,6 +5,7 @@
 ### Added
 - Add option to constrain the base-box version.
 - Add the node-module `localtunnel`.
+- Add the node-module `browser-sync`.
 
 ### Changed
 - Upgrade to Nginx 1.9.
