@@ -2,6 +2,20 @@
 
 ## [Next][next]
 
+### Added
+- Add option to constrain the base-box version.
+
+### Changed
+- Upgrade to Nginx 1.9.
+- Upgrade to Node.js 5.
+- Upgrade to npm 3.
+- Use GraphicsMagick instead of ImageMagick.
+- Set utf8mb4 character-set for MySQL.
+- Skip development dependencies for the installed node modules.
+
+### Fixed
+- Move MySQL configuration to the correct location.
+
 ## [0.5.0] - 2015-09-17
 
 ### Added
