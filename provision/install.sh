@@ -14,7 +14,7 @@ apt-add-repository -y ppa:ondrej/mysql-5.6
 add-apt-repository -y ppa:git-core/ppa
 
 wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-add-apt-repository https://deb.nodesource.com/node_4.x
+add-apt-repository https://deb.nodesource.com/node_5.x
 
 # Update Packages
 apt-get update
