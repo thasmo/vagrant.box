@@ -6,7 +6,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Add Repositories
 apt-get install -y software-properties-common
-apt-add-repository -y ppa:nginx/stable
+apt-add-repository -y ppa:nginx/development
 apt-add-repository -y ppa:chris-lea/redis-server
 apt-add-repository -y ppa:ondrej/apache2
 apt-add-repository -y ppa:ondrej/php5-5.6
