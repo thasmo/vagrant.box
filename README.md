@@ -23,8 +23,8 @@ Work in progress.
 * Redis 3.0
 * Memcached 1.4
 * Git 2.x
-* Node.js 0.12
-* NPM 2.x
+* Node.js 5.x
+* npm 3.x
 * SQLite 3.8
 
 ### Apache Modules
@@ -41,7 +41,7 @@ Work in progress.
 `xmlwriter`, `zip`, `zlib`
 
 ### Node Modules (global)
-`gulp`, `grunt-cli`, `bower`, `yo`
+`gulp`, `grunt-cli`, `bower`, `yo`, `localtunnel`, `browser-sync`
 
 ## Prerequisites
 * Vagrant >= 1.7.0
@@ -60,12 +60,12 @@ It's possible to define PHP settings per directory using [.user.ini files](http:
 Note that the INI directive `user_ini.cache_ttl` has been lowered to 10 seconds to detect changes faster.
 
 ### MySQL
-MySQL has been set up to use the `utf8` charset and `utf8_unicode_ci` collation by default.
+MySQL has been set up to use the `utf8mb4` character-set and `utf8mb4_unicode_ci` collation by default.
 
 ## Usage
 
 ### Hosts
-Virtual hosts in the `hosts directory` will be served by the configured webserver.
+Virtual hosts in the `hosts directory` will be served by the configured web-server.
 
 #### Nginx
 Files inside a host directory are publicly accessible except you create a sub-directory called `public`, `htdocs` or
@@ -94,7 +94,7 @@ final document root path by stripping of subdomain parts.
 
 #### Custom Hosts
 Host configuration files stored in `hosts/apache` and `hosts/nginx` will be loaded automatically, depending on which
-webserver you have configured to be used.
+web-server you have configured to be used.
 
 #### Loopback Providers
 Support for various *loopback/tunnel* providers is baked in. Supported are:
@@ -135,6 +135,7 @@ database backups will still be created every hour.
 ## Settings
 - *machine*
     - *box*: Name of the base box to use. Can be a local box or a box hosted on Atlas.
+    - *version*: Version constraint for the base box version to use.
     - *name*: Name of the VM, which is displayed in the GUI of the provider. Should be unique per provider.
     - *hostname*: Defines the hostname of the VM.
     - *memory*: Amount of RAM in MB the VM will be assigned.
