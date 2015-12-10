@@ -4,6 +4,7 @@
 
 ### Added
 - Add option to constrain the base-box version.
+- Add the node-module `localtunnel`.
 
 ### Changed
 - Upgrade to Nginx 1.9.

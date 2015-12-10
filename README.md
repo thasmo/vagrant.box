@@ -41,7 +41,7 @@ Work in progress.
 `xmlwriter`, `zip`, `zlib`
 
 ### Node Modules (global)
-`gulp`, `grunt-cli`, `bower`, `yo`
+`gulp`, `grunt-cli`, `bower`, `yo`, `localtunnel`
 
 ## Prerequisites
 * Vagrant >= 1.7.0
