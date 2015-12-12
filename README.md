@@ -16,8 +16,8 @@ Work in progress.
 ## Software
 * Ubuntu 15.04 64-bit
 * Apache 2.4
-* Nginx 1.8
-* PHP 5.6 (FPM)
+* Nginx 1.9
+* PHP 7.0 (FPM)
 * Composer
 * MySQL 5.6
 * Redis 3.0
