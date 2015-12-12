@@ -9,7 +9,7 @@ apt-get install -y software-properties-common
 apt-add-repository -y ppa:nginx/development
 apt-add-repository -y ppa:chris-lea/redis-server
 apt-add-repository -y ppa:ondrej/apache2
-apt-add-repository -y ppa:ondrej/php5-5.6
+apt-add-repository -y ppa:ondrej/php-7.0
 apt-add-repository -y ppa:ondrej/mysql-5.6
 add-apt-repository -y ppa:git-core/ppa
 
@@ -24,8 +24,8 @@ apt-get upgrade -y
 apt-get install -y \
 build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev make graphicsmagick postfix dovecot-imapd \
 apache2 nginx nodejs sqlite3 libsqlite3-dev mysql-server redis-server memcached ssl-cert ntp \
-php5-cli php5-dev php5-mysqlnd php5-sqlite php5-apcu php5-json php5-curl php5-gd \
-php5-gmp php5-imap php5-mcrypt php5-xdebug php5-memcached php5-redis php5-fpm php5-intl
+php-fpm php-cli php-dev php-opcache php-mysql php-pgsql php-sqlite3 php-json \
+php-curl php-gd php-imap php7.0-mcrypt php-intl php-xdebug php-memcached php-redis
 
 # Install Node Packages
 npm update --global npm
@@ -63,8 +63,8 @@ rm /etc/nginx/sites-enabled/default
 service nginx restart &> /dev/null
 
 # Configure PHP
-cp /vagrant/provision/configuration/php/pool.ini /etc/php5/fpm/pool.d/www.conf
-service php5-fpm restart &> /dev/null
+cp /vagrant/provision/configuration/php/pool.ini /etc/php/7.0/fpm/pool.d/www.conf
+service php7.0-fpm restart &> /dev/null
 
 # Configure MySQL
 mysql --user="root" --password="" -e "UPDATE mysql.user SET Host='%' WHERE Host='localhost' AND User='root';"

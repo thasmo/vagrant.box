@@ -48,12 +48,12 @@ case $option in
     # PHP CLI
     contents=$(< /vagrant/provision/configuration/php/php-cli.ini)
     contents=$(echo "$contents" | sed -e "s@\$TIMEZONE@$data@g")
-    echo "$contents" > /etc/php5/cli/conf.d/99-custom.ini
+    echo "$contents" > /etc/php/7.0/cli/conf.d/99-custom.ini
 
     # PHP FPM
     contents=$(< /vagrant/provision/configuration/php/php-fpm.ini)
     contents=$(echo "$contents" | sed -e "s@\$TIMEZONE@$data@g")
-    echo "$contents" > /etc/php5/fpm/conf.d/99-custom.ini
+    echo "$contents" > /etc/php/7.0/fpm/conf.d/99-custom.ini
 
     ;;
 
@@ -66,7 +66,7 @@ case $option in
 
     service nginx restart &> /dev/null
     service apache2 restart &> /dev/null
-    service php5-fpm restart &> /dev/null
+    service php7.0-fpm restart &> /dev/null
 
     echo "Ready."
     ;;
