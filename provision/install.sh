@@ -24,7 +24,7 @@ apt-get upgrade -y
 apt-get install -y \
 build-essential curl dos2unix gcc git libmcrypt4 libpcre3-dev make graphicsmagick postfix dovecot-imapd \
 apache2 nginx nodejs sqlite3 libsqlite3-dev mysql-server redis-server memcached ssl-cert ntp \
-php-fpm php-cli php-dev php-opcache php-mysql php-pgsql php-sqlite3 php-json \
+php-fpm php-cli php-dev php-opcache php-mysql php-pgsql php-sqlite3 php-json php-apcu \
 php-curl php-gd php-imap php7.0-mcrypt php-intl php-xdebug php-memcached php-redis
 
 # Install Node Packages
