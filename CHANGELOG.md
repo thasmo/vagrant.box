@@ -2,6 +2,12 @@
 
 ## [Next][next]
 
+### Changed
+- Upgrade to PHP 7.0.
+
+### Removed
+- Remove port mapping for `live-reload`.
+
 ## [0.6.0] - 2015-11-10
 
 ### Added
