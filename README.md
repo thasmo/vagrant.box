@@ -16,8 +16,8 @@ Work in progress.
 ## Software
 * Ubuntu 15.04 64-bit
 * Apache 2.4
-* Nginx 1.8
-* PHP 5.6 (FPM)
+* Nginx 1.9
+* PHP 7.0 (FPM)
 * Composer
 * MySQL 5.6
 * Redis 3.0
@@ -33,12 +33,12 @@ Work in progress.
 `proxy`, `proxy_fcgi`, `rewrite`, `setenvif`, `socache_shmcb`, `ssl`, `status`, `vhost_alias`
 
 ### PHP Modules
-`apc`, `apcu`, `bcmath`, `bz2`, `calendar`, `cgi-fcgi`, `core`, `ctype`, `curl`, `date`, `dba`, `dom`, `ereg`, `exif`,
+`apc`, `apcu`, `bcmath`, `calendar`, `cgi-fcgi`, `core`, `ctype`, `curl`, `date`, `dba`, `dom`, `enchant`, `exif`,
 `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `hash`, `iconv`, `imap`, `intl`, `json`, `libxml`, `mbstring`,
-`mcrypt`, `memcached`, `mhash`, `mysql`, `mysqli`, `mysqlnd`, `opcache`, `openssl`, `pcre`, `pdo`, `pdo_mysql`,
-`pdo_sqlite`, `phar`, `posix`, `readline`, `redis`, `reflection`, `session`, `shmop`, `simplexml`, `soap`, `sockets`,
-`spl`, `sqlite3`, `standard`, `sysvmsg`, `sysvsem`, `sysvshm`, `tokenizer`, `wddx`, `xdebug`, `xml`, `xmlreader`,
-`xmlwriter`, `zip`, `zlib`
+`mcrypt`, `memcached`, `mysqli`, `mysqlnd`, `openssl`, `pcre`, `pdo`, `pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `pgsql`,
+`phar`, `posix`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `spl`, `sqlite3`, `standard`,
+`sysvmsg`, `sysvsem`, `sysvshm`, `tokenizer`, `xdebug`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zend opcache`,
+`zip`, `zlib`
 
 ### Node Modules (global)
 `gulp`, `grunt-cli`, `bower`, `yo`, `localtunnel`, `browser-sync`
