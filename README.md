@@ -159,7 +159,7 @@ database backups will still be created every hour.
 Run `vagrant reload` to apply changes made in settings.yaml.
 
 ## Notes
-Only tested on Windows 8.1 using VMware Workstation 11.
+Only tested on Windows 10 using VMware Workstation 11.
 
 [localtunnel.me]: http://localtunnel.me/
 [vagrantshare.com]: http://vagrantshare.com/
