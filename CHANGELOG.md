@@ -1,6 +1,12 @@
 # Change Log
 
-## [Next][next]
+## [next]
+
+### Changed
+- Move installation of services to separate scripts.
+
+### Fixed
+- Improve duration of `npm install`.
 
 ## [0.7.1] - 2016-01-21
 
