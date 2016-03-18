@@ -1,7 +1,7 @@
 # Machine
 machine:
-  box: 'bento/ubuntu-15.04'
-  version: '>= 2.2'
+  box: 'boxcutter/ubuntu1510'
+  version: '>= 2.0'
   name: 'Vagrant'
   hostname: 'vagrant'
   memory: 1024
