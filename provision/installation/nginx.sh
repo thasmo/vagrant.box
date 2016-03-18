@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Add PPA.
+apt-add-repository -u -y ppa:nginx/development
+
 # Install packages.
 apt-get install -y --no-install-recommends -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" nginx-full
 

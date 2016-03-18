@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
+# Add PPA.
+apt-add-repository -u -y ppa:ondrej/php
+
 # Install packages.
 apt-get install -y --no-install-recommends \
-php-fpm php-cli php-dev php-mysql php-pgsql php-sqlite3 php-json php-apcu \
-php-curl php-gd php-imap php7.0-mcrypt php-intl php-xdebug php-memcached php-redis
+php7.0-fpm php7.0-cli php7.0-dev php7.0-mysql php7.0-pgsql php7.0-sqlite3 php7.0-json php7.0-curl \
+php7.0-gd php7.0-imap php7.0-mcrypt php7.0-intl php7.0-xmlrpc php7.0-bz2 php7.0-opcache php7.0-ldap \
+php-redis php-memcached php-xdebug php-apcu php-json
 
 # Install Composer.
 if ! command -v "composer" > /dev/null; then

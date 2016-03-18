@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Add PPA.
+apt-add-repository -u -y ppa:ondrej/mysql-5.6
+
 # Install packages.
 apt-get install -y --no-install-recommends mysql-server
 

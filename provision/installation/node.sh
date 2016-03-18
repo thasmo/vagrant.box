@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Add PPA.
+wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+add-apt-repository -u -y https://deb.nodesource.com/node_5.x
+
 # Install packages.
 apt-get install -y --no-install-recommends nodejs
 

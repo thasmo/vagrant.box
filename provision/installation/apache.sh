@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Add PPA.
+apt-add-repository -u -y ppa:ondrej/apache2
+
 # Install packages.
 apt-get install -y --no-install-recommends apache2
 
