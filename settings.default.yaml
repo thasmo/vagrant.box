@@ -1,6 +1,6 @@
 # Machine
 machine:
-  box: 'boxcutter/ubuntu1510'
+  box: 'boxcutter/ubuntu1604'
   version: '>= 2.0'
   name: 'Vagrant'
   hostname: 'vagrant'
