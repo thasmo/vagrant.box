@@ -2,6 +2,20 @@
 
 ## [next]
 
+### Added
+- Add `zip`, `xml` and `soap` PHP modules.
+
+### Changed
+- Raise required Vagrant version to 1.8.
+- Use `boxcutter/ubuntu1604` as base-box.
+- Optimize package-installation process.
+
+### Fixed
+- Remove duplicated SERVER_NAME env-variable from Nginx configuration.
+
+### Removed
+- Remove some obsolete PPAs.
+
 ## [0.7.2] - 2016-02-06
 
 ### Changed
