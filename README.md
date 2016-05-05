@@ -36,10 +36,10 @@ Work in progress.
 ### PHP Modules
 `apcu`, `bz2`, `calendar`, `core`, `ctype`, `curl`, `date`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`,
 `gettext`, `hash`, `iconv`, `imap`, `intl`, `json`, `ldap`, `libxml`, `mcrypt`, `memcached`, `mysqli`, `mysqlnd`,
-`openssl`, `pcntl`, `pcre`, `pdo`, `pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `pgsql`, `phar`, `posix`, `readline`,
-`redis`, `reflection`, `session`, `shmop`, `simplexml`, `soap`, `sockets`, `spl`, `sqlite3`, `standard`, `sysvmsg`,
-`sysvsem`, `sysvshm`, `tokenizer`, `wddx`, `xdebug`, `xml`, `xmlreader`, `xmlrpc`, `xmlwriter`, `xsl`, `opcache`,
-`zip`, `zlib`
+`mbstring`, `openssl`, `pcntl`, `pcre`, `pdo`, `pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `pgsql`, `phar`, `posix`,
+`readline`, `redis`, `reflection`, `session`, `shmop`, `simplexml`, `soap`, `sockets`, `spl`, `sqlite3`, `standard`,
+`sysvmsg`, `sysvsem`, `sysvshm`, `tokenizer`, `wddx`, `xdebug`, `xml`, `xmlreader`, `xmlrpc`, `xmlwriter`, `xsl`,
+`opcache`, `zip`, `zlib`
 
 ### Node Modules (global)
 `gulp`, `grunt-cli`, `bower`, `yo`, `localtunnel`, `browser-sync`

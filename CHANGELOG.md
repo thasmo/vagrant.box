@@ -3,7 +3,7 @@
 ## [next]
 
 ### Added
-- Add `zip`, `xml` and `soap` PHP modules.
+- Add `zip`, `xml`, `mbstring` and `soap` PHP modules.
 
 ### Changed
 - Raise required Vagrant version to 1.8.
