@@ -42,7 +42,7 @@ Work in progress.
 `opcache`, `zip`, `zlib`
 
 ### Node Modules (global)
-`gulp`, `grunt-cli`, `bower`, `yo`, `localtunnel`, `browser-sync`
+`gulp-cli`, `grunt-cli`, `bower`, `yo`, `localtunnel`, `browser-sync`
 
 ## Prerequisites
 * Vagrant >= 1.8.0

@@ -16,7 +16,7 @@ npm config set strict-ssl false
 
 # Install node modules.
 npm install --global --production --no-optional grunt-cli
-npm install --global --production --no-optional gulp
+npm install --global --production --no-optional gulp-cli
 npm install --global --production --no-optional bower
 npm install --global --production --no-optional yo
 npm install --global --production --no-optional localtunnel
