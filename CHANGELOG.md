@@ -9,6 +9,7 @@
 - Raise required Vagrant version to 1.8.
 - Use `boxcutter/ubuntu1604` as base-box.
 - Optimize package-installation process.
+- Update Node.js to version 6.0.x.
 
 ### Fixed
 - Remove duplicated SERVER_NAME env-variable from Nginx configuration.
