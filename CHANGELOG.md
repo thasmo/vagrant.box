@@ -2,6 +2,24 @@
 
 ## [next]
 
+## [0.8.0] - 2016-05-07
+
+### Added
+- Add `zip`, `xml`, `mbstring` and `soap` PHP modules.
+- Install `docker-engine` and `docker-compose`.
+
+### Changed
+- Raise required Vagrant version to 1.8.
+- Use `boxcutter/ubuntu1604` as base-box.
+- Optimize package-installation process.
+- Update Node.js to version 6.0.x.
+
+### Fixed
+- Remove duplicated SERVER_NAME env-variable from Nginx configuration.
+
+### Removed
+- Remove some obsolete PPAs.
+
 ## [0.7.2] - 2016-02-06
 
 ### Changed
@@ -136,7 +154,8 @@
 
 ## 0.1.0 - 2013-11-11
 
-[next]: https://github.com/thasmo/vagrant.box/compare/v0.7.2...HEAD
+[next]: https://github.com/thasmo/vagrant.box/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/thasmo/vagrant.box/compare/v0.7.2...v0.8.0
 [0.7.2]: https://github.com/thasmo/vagrant.box/compare/v0.7.1...v0.7.2
 [0.7.1]: https://github.com/thasmo/vagrant.box/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/thasmo/vagrant.box/compare/v0.6.0...v0.7.0

@@ -16,7 +16,7 @@ ports = {
 }
 
 # Version
-Vagrant.require_version '>= 1.7.0'
+Vagrant.require_version '>= 1.8.0'
 
 # Configuration
 Vagrant.configure('2') do |config|

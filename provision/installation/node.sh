@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Add PPA.
+wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+add-apt-repository -u -y https://deb.nodesource.com/node_6.x
+
 # Install packages.
 apt-get install -y --no-install-recommends nodejs
 
@@ -12,7 +16,7 @@ npm config set strict-ssl false
 
 # Install node modules.
 npm install --global --production --no-optional grunt-cli
-npm install --global --production --no-optional gulp
+npm install --global --production --no-optional gulp-cli
 npm install --global --production --no-optional bower
 npm install --global --production --no-optional yo
 npm install --global --production --no-optional localtunnel

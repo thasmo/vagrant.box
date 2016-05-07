@@ -10,41 +10,41 @@ A custom Vagrant Box for PHP Web Development.
 * Comprehensive Documentation
 * Automate everything
 
-## Status
-Work in progress.
-
 ## Software
-* Ubuntu 15.04 64-bit
+* Ubuntu 16.04 64-bit
+* Docker Engine
+* Docker Compose
 * Apache 2.4
 * Nginx 1.9
 * PHP 7.0 (FPM)
 * Composer
-* MySQL 5.6
+* MySQL 5.7
 * Redis 3.0
 * Memcached 1.4
 * Git 2.x
-* Node.js 5.x
+* Node.js 6.x
 * npm 3.x
 * SQLite 3.8
 
 ### Apache Modules
-`access_compat`, `actions`, `alias`, `auth_basic`, `authn_core`, `authn_file`, `authz_core`, `authz_groupfile`,
-`authz_host`, `authz_user`, `autoindex`, `deflate`, `dir`, `env`, `filter`, `mime`, `mpm_event`, `negotiation`,
-`proxy`, `proxy_fcgi`, `rewrite`, `setenvif`, `socache_shmcb`, `ssl`, `status`, `vhost_alias`
+`core`, `so`, `watchdog`, `http`, `log_config`, `logio`, `version`, `unixd`, `access_compat`, `actions`, `alias`,
+`auth_basic`, `authn_core`, `authn_file`, `authz_core`, `authz_host`, `authz_user`, `autoindex`, `deflate`, `dir`,
+`env`, `filter`, `headers`, `mime`, `mpm_event`, `negotiation`, `proxy`, `proxy_fcgi`, `rewrite`, `setenvif`,
+`socache_shmcb`, `ssl`, `status`, `vhost_alias`
 
 ### PHP Modules
-`apc`, `apcu`, `bcmath`, `calendar`, `cgi-fcgi`, `core`, `ctype`, `curl`, `date`, `dba`, `dom`, `enchant`, `exif`,
-`fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `hash`, `iconv`, `imap`, `intl`, `json`, `libxml`, `mbstring`,
-`mcrypt`, `memcached`, `mysqli`, `mysqlnd`, `openssl`, `pcre`, `pdo`, `pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `pgsql`,
-`phar`, `posix`, `redis`, `reflection`, `session`, `simplexml`, `soap`, `sockets`, `spl`, `sqlite3`, `standard`,
-`sysvmsg`, `sysvsem`, `sysvshm`, `tokenizer`, `xdebug`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zend opcache`,
-`zip`, `zlib`
+`apcu`, `bz2`, `calendar`, `core`, `ctype`, `curl`, `date`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`,
+`gettext`, `hash`, `iconv`, `imap`, `intl`, `json`, `ldap`, `libxml`, `mcrypt`, `memcached`, `mysqli`, `mysqlnd`,
+`mbstring`, `openssl`, `pcntl`, `pcre`, `pdo`, `pdo_mysql`, `pdo_pgsql`, `pdo_sqlite`, `pgsql`, `phar`, `posix`,
+`readline`, `redis`, `reflection`, `session`, `shmop`, `simplexml`, `soap`, `sockets`, `spl`, `sqlite3`, `standard`,
+`sysvmsg`, `sysvsem`, `sysvshm`, `tokenizer`, `wddx`, `xdebug`, `xml`, `xmlreader`, `xmlrpc`, `xmlwriter`, `xsl`,
+`opcache`, `zip`, `zlib`
 
 ### Node Modules (global)
-`gulp`, `grunt-cli`, `bower`, `yo`, `localtunnel`, `browser-sync`
+`gulp-cli`, `grunt-cli`, `bower`, `yo`, `localtunnel`, `browser-sync`
 
 ## Prerequisites
-* Vagrant >= 1.7.0
+* Vagrant >= 1.8.0
 * VirtualBox, VMWare Workstation/Fusion or Parallels
 
 ## Installation
