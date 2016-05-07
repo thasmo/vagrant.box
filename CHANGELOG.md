@@ -4,6 +4,7 @@
 
 ### Added
 - Add `zip`, `xml`, `mbstring` and `soap` PHP modules.
+- Install `docker-engine` and `docker-compose`.
 
 ### Changed
 - Raise required Vagrant version to 1.8.

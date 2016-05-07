@@ -15,6 +15,8 @@ Work in progress.
 
 ## Software
 * Ubuntu 16.04 64-bit
+* Docker Engine
+* Docker Compose
 * Apache 2.4
 * Nginx 1.9
 * PHP 7.0 (FPM)
