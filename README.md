@@ -10,9 +10,6 @@ A custom Vagrant Box for PHP Web Development.
 * Comprehensive Documentation
 * Automate everything
 
-## Status
-Work in progress.
-
 ## Software
 * Ubuntu 16.04 64-bit
 * Docker Engine
